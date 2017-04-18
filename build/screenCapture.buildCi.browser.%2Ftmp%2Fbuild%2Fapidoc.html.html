@@ -1,0 +1,3911 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://saebekassebil.github.com/teoria">teoria (v2.2.2)</a>
+</h1>
+<h4>Music theory for JavaScript</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria">module teoria</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord">
+            function <span class="apidocSignatureSpan">teoria.</span>Chord
+            <span class="apidocSignatureSpan">(root, name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval">
+            function <span class="apidocSignatureSpan">teoria.</span>Interval
+            <span class="apidocSignatureSpan">(coord)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note">
+            function <span class="apidocSignatureSpan">teoria.</span>Note
+            <span class="apidocSignatureSpan">(coord, duration)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Scale">
+            function <span class="apidocSignatureSpan">teoria.</span>Scale
+            <span class="apidocSignatureSpan">(tonic, scale)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.chord">
+            function <span class="apidocSignatureSpan">teoria.</span>chord
+            <span class="apidocSignatureSpan">(name, symbol)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.interval">
+            function <span class="apidocSignatureSpan">teoria.</span>interval
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.note">
+            function <span class="apidocSignatureSpan">teoria.</span>note
+            <span class="apidocSignatureSpan">(name, duration)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.scale">
+            function <span class="apidocSignatureSpan">teoria.</span>scale
+            <span class="apidocSignatureSpan">(tonic, scale)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">teoria.</span>Chord.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">teoria.</span>Interval.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">teoria.</span>Note.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">teoria.</span>Scale.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">teoria.</span>vector</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.Chord">module teoria.Chord</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.Chord">
+            function <span class="apidocSignatureSpan">teoria.</span>Chord
+            <span class="apidocSignatureSpan">(root, name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.Chord.prototype">module teoria.Chord.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.bass">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>bass
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.chordType">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>chordType
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.dominant">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>dominant
+            <span class="apidocSignatureSpan">(additional)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.get">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>get
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.interval">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>interval
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.notes">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>notes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.parallel">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>parallel
+            <span class="apidocSignatureSpan">(additional)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.quality">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>quality
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.resetVoicing">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>resetVoicing
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.simple">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>simple
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.subdominant">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>subdominant
+            <span class="apidocSignatureSpan">(additional)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.toString">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.transpose">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>transpose
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Chord.prototype.voicing">
+            function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>voicing
+            <span class="apidocSignatureSpan">(voicing)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.Interval">module teoria.Interval</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.Interval">
+            function <span class="apidocSignatureSpan">teoria.</span>Interval
+            <span class="apidocSignatureSpan">(coord)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.between">
+            function <span class="apidocSignatureSpan">teoria.Interval.</span>between
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.from">
+            function <span class="apidocSignatureSpan">teoria.Interval.</span>from
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.invert">
+            function <span class="apidocSignatureSpan">teoria.Interval.</span>invert
+            <span class="apidocSignatureSpan">(sInterval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.toCoord">
+            function <span class="apidocSignatureSpan">teoria.Interval.</span>toCoord
+            <span class="apidocSignatureSpan">(simple)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.Interval.prototype">module teoria.Interval.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.add">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>add
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.base">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>base
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.direction">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>direction
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.equal">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>equal
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.greater">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>greater
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.invert">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>invert
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.isCompound">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>isCompound
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.name">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>name
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.number">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>number
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.octaves">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>octaves
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.quality">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>quality
+            <span class="apidocSignatureSpan">(lng)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.qualityValue">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>qualityValue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.semitones">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>semitones
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.simple">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>simple
+            <span class="apidocSignatureSpan">(ignore)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.smaller">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>smaller
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.toString">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>toString
+            <span class="apidocSignatureSpan">(ignore)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.type">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>type
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Interval.prototype.value">
+            function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>value
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.Note">module teoria.Note</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.Note">
+            function <span class="apidocSignatureSpan">teoria.</span>Note
+            <span class="apidocSignatureSpan">(coord, duration)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.fromFrequency">
+            function <span class="apidocSignatureSpan">teoria.Note.</span>fromFrequency
+            <span class="apidocSignatureSpan">(fq, concertPitch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.fromKey">
+            function <span class="apidocSignatureSpan">teoria.Note.</span>fromKey
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.fromMIDI">
+            function <span class="apidocSignatureSpan">teoria.Note.</span>fromMIDI
+            <span class="apidocSignatureSpan">(note)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.fromString">
+            function <span class="apidocSignatureSpan">teoria.Note.</span>fromString
+            <span class="apidocSignatureSpan">(name, dur)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.Note.prototype">module teoria.Note.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.accidental">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>accidental
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.accidentalValue">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>accidentalValue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.chord">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>chord
+            <span class="apidocSignatureSpan">(chord)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.chroma">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>chroma
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.durationInSeconds">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>durationInSeconds
+            <span class="apidocSignatureSpan">(bpm, beatUnit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.durationName">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>durationName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.enharmonics">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>enharmonics
+            <span class="apidocSignatureSpan">(oneaccidental)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.fq">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>fq
+            <span class="apidocSignatureSpan">(concertPitch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.helmholtz">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>helmholtz
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.interval">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>interval
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.key">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>key
+            <span class="apidocSignatureSpan">(white)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.midi">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>midi
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.name">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>name
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.octave">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>octave
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.scale">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>scale
+            <span class="apidocSignatureSpan">(scale)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.scaleDegree">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>scaleDegree
+            <span class="apidocSignatureSpan">(scale)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.scientific">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>scientific
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.solfege">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>solfege
+            <span class="apidocSignatureSpan">(scale, showOctaves)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.toString">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>toString
+            <span class="apidocSignatureSpan">(dont)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Note.prototype.transpose">
+            function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>transpose
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.Scale">module teoria.Scale</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Scale.Scale">
+            function <span class="apidocSignatureSpan">teoria.</span>Scale
+            <span class="apidocSignatureSpan">(tonic, scale)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">teoria.Scale.</span>KNOWN_SCALES</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.Scale.prototype">module teoria.Scale.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Scale.prototype.get">
+            function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>get
+            <span class="apidocSignatureSpan">(i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Scale.prototype.interval">
+            function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>interval
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Scale.prototype.notes">
+            function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>notes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Scale.prototype.simple">
+            function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>simple
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Scale.prototype.solfege">
+            function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>solfege
+            <span class="apidocSignatureSpan">(index, showOctaves)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Scale.prototype.transpose">
+            function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>transpose
+            <span class="apidocSignatureSpan">(interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.Scale.prototype.type">
+            function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>type
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.interval">module teoria.interval</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.interval.interval">
+            function <span class="apidocSignatureSpan">teoria.</span>interval
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.interval.between">
+            function <span class="apidocSignatureSpan">teoria.interval.</span>between
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.interval.from">
+            function <span class="apidocSignatureSpan">teoria.interval.</span>from
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.interval.invert">
+            function <span class="apidocSignatureSpan">teoria.interval.</span>invert
+            <span class="apidocSignatureSpan">(sInterval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.interval.toCoord">
+            function <span class="apidocSignatureSpan">teoria.interval.</span>toCoord
+            <span class="apidocSignatureSpan">(simple)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.note">module teoria.note</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.note.note">
+            function <span class="apidocSignatureSpan">teoria.</span>note
+            <span class="apidocSignatureSpan">(name, duration)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.note.fromFrequency">
+            function <span class="apidocSignatureSpan">teoria.note.</span>fromFrequency
+            <span class="apidocSignatureSpan">(fq, concertPitch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.note.fromKey">
+            function <span class="apidocSignatureSpan">teoria.note.</span>fromKey
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.note.fromMIDI">
+            function <span class="apidocSignatureSpan">teoria.note.</span>fromMIDI
+            <span class="apidocSignatureSpan">(note)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.note.fromString">
+            function <span class="apidocSignatureSpan">teoria.note.</span>fromString
+            <span class="apidocSignatureSpan">(name, dur)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.teoria.vector">module teoria.vector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.vector.add">
+            function <span class="apidocSignatureSpan">teoria.vector.</span>add
+            <span class="apidocSignatureSpan">(note, interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.vector.mul">
+            function <span class="apidocSignatureSpan">teoria.vector.</span>mul
+            <span class="apidocSignatureSpan">(note, interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.vector.sub">
+            function <span class="apidocSignatureSpan">teoria.vector.</span>sub
+            <span class="apidocSignatureSpan">(note, interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.teoria.vector.sum">
+            function <span class="apidocSignatureSpan">teoria.vector.</span>sum
+            <span class="apidocSignatureSpan">(coord)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria" id="apidoc.module.teoria">module teoria</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord" id="apidoc.element.teoria.Chord">
+        function <span class="apidocSignatureSpan">teoria.</span>Chord
+        <span class="apidocSignatureSpan">(root, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Chord(root, name) {
+  if (!(this instanceof Chord)) return new Chord(root, name);
+  name = name || '';
+  this.name = root.name().toUpperCase() + root.accidental() + name;
+  this.symbol = name;
+  this.root = root;
+  this.intervals = [];
+  this._voicing = [];
+
+  var bass = name.split('/');
+  if (bass.length === 2 &amp;&amp; bass[1].trim() !== '9') {
+    name = bass[0];
+    bass = bass[1].trim();
+  } else {
+    bass = null;
+  }
+
+  this.intervals = daccord(name).map(Interval.toCoord);
+  this._voicing = this.intervals.slice();
+
+  if (bass) {
+    var intervals = this.intervals, bassInterval, note;
+    // Make sure the bass is atop of the root note
+    note = Note.fromString(bass + (root.octave() + 1)); // crude
+
+    bassInterval = Interval.between(root, note);
+    bass = bassInterval.simple();
+    bassInterval = bassInterval.invert().direction('down');
+
+    this._voicing = [bassInterval];
+    for (var i = 0, length = intervals.length;  i &lt; length; i++) {
+      if (!intervals[i].simple().equal(bass))
+        this._voicing.push(intervals[i]);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval" id="apidoc.element.teoria.Interval">
+        function <span class="apidocSignatureSpan">teoria.</span>Interval
+        <span class="apidocSignatureSpan">(coord)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Interval(coord) {
+  if (!(this instanceof Interval)) return new Interval(coord);
+  this.coord = coord;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note" id="apidoc.element.teoria.Note">
+        function <span class="apidocSignatureSpan">teoria.</span>Note
+        <span class="apidocSignatureSpan">(coord, duration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Note(coord, duration) {
+  if (!(this instanceof Note)) return new Note(coord, duration);
+  duration = duration || {};
+
+  this.duration = { value: duration.value || 4, dots: duration.dots || 0 };
+  this.coord = coord;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Scale" id="apidoc.element.teoria.Scale">
+        function <span class="apidocSignatureSpan">teoria.</span>Scale
+        <span class="apidocSignatureSpan">(tonic, scale)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Scale(tonic, scale) {
+  if (!(this instanceof Scale)) return new Scale(tonic, scale);
+  var scaleName, i;
+  if (!('coord' in tonic)) {
+    throw new Error('Invalid Tonic');
+  }
+
+  if (typeof scale === 'string') {
+    scaleName = scale;
+    scale = scales[scale];
+    if (!scale)
+      throw new Error('Invalid Scale');
+  } else {
+    for (i in scales) {
+      if (scales.hasOwnProperty(i)) {
+        if (scales[i].toString() === scale.toString()) {
+          scaleName = i;
+          break;
+        }
+      }
+    }
+  }
+
+  this.name = scaleName;
+  this.tonic = tonic;
+  this.scale = scale;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.chord" id="apidoc.element.teoria.chord">
+        function <span class="apidocSignatureSpan">teoria.</span>chord
+        <span class="apidocSignatureSpan">(name, symbol)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function chordConstructor(name, symbol) {
+  if (typeof name === 'string') {
+    var root, octave;
+    root = name.match(/^([a-h])(x|#|bb|b?)/i);
+    if (root &amp;&amp; root[0]) {
+      octave = typeof symbol === 'number' ? symbol.toString(10) : '4';
+      return new Chord(Note.fromString(root[0].toLowerCase() + octave),
+                            name.substr(root[0].length));
+    }
+  } else if (name instanceof Note)
+    return new Chord(name, symbol);
+
+  throw new Error('Invalid Chord. Couldn\'t find note name');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Create scales, based on notes.
+a4.scale('mixolydian').simple();  // Returns: ["a", "b", "c#", "d", "e"
+;, "f#", "g"]
+a4.scale('aeolian').simple();     // Returns: ["a", "b", "c", "d", "e"
+;, "f", "g"]
+g5.scale('ionian').simple();      // Returns: ["g", "a", "b", "c", "d"
+;, "e", "f#"]
+g5.scale('dorian');               // Returns a Scale object
+
+// Create chords with the powerful chord parser
+a4.<span class="apidocCodeKeywordSpan">chord</span>('sus2').name;    // Returns the name of the chord: 'Asus2'
+;
+c3.chord('m').name;       // Returns 'Cm'
+teoria.chord('Ab#5b9');   // Returns a Chord object, representing a Ab#5b9 chord
+g5.chord('dim');          // Returns a Chord object, representing a Gdim chord
+
+// Calculate note frequencies or find the note corresponding to a frequency
+teoria.note.fromFrequency(467); // Returns: {'note':{...},'cents':3.102831} -&gt; A4# a little out of tune
+.
+a4.fq(); // Outputs 440
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.interval" id="apidoc.element.teoria.interval">
+        function <span class="apidocSignatureSpan">teoria.</span>interval
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function intervalConstructor(from, to) {
+  // Construct a Interval object from string representation
+  if (typeof from === 'string')
+    return Interval.toCoord(from);
+
+  if (typeof to === 'string' &amp;&amp; from instanceof Note)
+    return Interval.from(from, Interval.toCoord(to));
+
+  if (to instanceof Interval &amp;&amp; from instanceof Note)
+    return Interval.from(from, to);
+
+  if (to instanceof Note &amp;&amp; from instanceof Note)
+    return Interval.between(from, to);
+
+  throw new Error('Invalid parameters');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Create notes:
+var a4 = teoria.note('a4');       // Scientific notation
+var g5 = teoria.note("g''");      // Helmholtz notation
+var c3 = teoria.note.fromKey(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.<span class="apidocCodeKeywordSpan">interval</span>(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').simple();  // Returns: ["a", "b", "c#", "d", "e"
+;, "f#", "g"]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.note" id="apidoc.element.teoria.note">
+        function <span class="apidocSignatureSpan">teoria.</span>note
+        <span class="apidocSignatureSpan">(name, duration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noteConstructor(name, duration) {
+  if (typeof name === 'string')
+    return Note.fromString(name, duration);
+  else
+    return new Note(name, duration);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+This is just a short introduction to what teoria-code looks like,
+for a technical library reference, look further down this document.
+
+```javascript
+
+// Create notes:
+var a4 = teoria.<span class="apidocCodeKeywordSpan">note</span>('a4');       // Scientific notation
+var g5 = teoria.note("g''");      // Helmholtz notation
+var c3 = teoria.note.fromKey(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.scale" id="apidoc.element.teoria.scale">
+        function <span class="apidocSignatureSpan">teoria.</span>scale
+        <span class="apidocSignatureSpan">(tonic, scale)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function scaleConstructor(tonic, scale) {
+  tonic = (tonic instanceof Note) ? tonic : teoria.note(tonic);
+  return new Scale(tonic, scale);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+
+// Create scales, based on notes.
+a4.<span class="apidocCodeKeywordSpan">scale</span>('mixolydian').simple();  // Returns: ["a", "b", &amp;#
+x22;c#", "d", "e", "f#", "g"]
+a4.scale('aeolian').simple();     // Returns: ["a", "b", "c", "d", "e"
+;, "f", "g"]
+g5.scale('ionian').simple();      // Returns: ["g", "a", "b", "c", "d"
+;, "e", "f#"]
+g5.scale('dorian');               // Returns a Scale object
+
+// Create chords with the powerful chord parser
+a4.chord('sus2').name;    // Returns the name of the chord: 'Asus2'
+c3.chord('m').name;       // Returns 'Cm'
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.Chord" id="apidoc.module.teoria.Chord">module teoria.Chord</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.Chord" id="apidoc.element.teoria.Chord.Chord">
+        function <span class="apidocSignatureSpan">teoria.</span>Chord
+        <span class="apidocSignatureSpan">(root, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Chord(root, name) {
+  if (!(this instanceof Chord)) return new Chord(root, name);
+  name = name || '';
+  this.name = root.name().toUpperCase() + root.accidental() + name;
+  this.symbol = name;
+  this.root = root;
+  this.intervals = [];
+  this._voicing = [];
+
+  var bass = name.split('/');
+  if (bass.length === 2 &amp;&amp; bass[1].trim() !== '9') {
+    name = bass[0];
+    bass = bass[1].trim();
+  } else {
+    bass = null;
+  }
+
+  this.intervals = daccord(name).map(Interval.toCoord);
+  this._voicing = this.intervals.slice();
+
+  if (bass) {
+    var intervals = this.intervals, bassInterval, note;
+    // Make sure the bass is atop of the root note
+    note = Note.fromString(bass + (root.octave() + 1)); // crude
+
+    bassInterval = Interval.between(root, note);
+    bass = bassInterval.simple();
+    bassInterval = bassInterval.invert().direction('down');
+
+    this._voicing = [bassInterval];
+    for (var i = 0, length = intervals.length;  i &lt; length; i++) {
+      if (!intervals[i].simple().equal(bass))
+        this._voicing.push(intervals[i]);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.Chord.prototype" id="apidoc.module.teoria.Chord.prototype">module teoria.Chord.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.bass" id="apidoc.element.teoria.Chord.prototype.bass">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>bass
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bass = function () {
+  return this.root.interval(this._voicing[0]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.chordType" id="apidoc.element.teoria.Chord.prototype.chordType">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>chordType
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chordType = function () { // In need of better name
+  var length = this.intervals.length, interval, has, invert, i, name;
+
+  if (length === 2) {
+    return 'dyad';
+  } else if (length === 3) {
+    has = {first: false, third: false, fifth: false};
+    for (i = 0; i &lt; length; i++) {
+      interval = this.intervals[i];
+      invert = interval.invert();
+      if (interval.base() in has) {
+        has[interval.base()] = true;
+      } else if (invert.base() in has) {
+        has[invert.base()] = true;
+      }
+    }
+
+    name = (has.first &amp;&amp; has.third &amp;&amp; has.fifth) ? 'triad' : 'trichord';
+  } else if (length === 4) {
+    has = {first: false, third: false, fifth: false, seventh: false};
+    for (i = 0; i &lt; length; i++) {
+      interval = this.intervals[i];
+      invert = interval.invert();
+      if (interval.base() in has) {
+        has[interval.base()] = true;
+      } else if (invert.base() in has) {
+        has[invert.base()] = true;
+      }
+    }
+
+    if (has.first &amp;&amp; has.third &amp;&amp; has.fifth &amp;&amp; has.seventh) {
+      name = 'tetrad';
+    }
+  }
+
+  return name || 'unknown';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.dominant" id="apidoc.element.teoria.Chord.prototype.dominant">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>dominant
+        <span class="apidocSignatureSpan">(additional)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dominant = function (additional) {
+  additional = additional || '';
+  return new Chord(this.root.interval('P5'), additional);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.get" id="apidoc.element.teoria.Chord.prototype.get">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>get
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (interval) {
+  if (typeof interval === 'string' &amp;&amp; interval in knowledge.stepNumber) {
+    var intervals = this.intervals, i, length;
+
+    interval = knowledge.stepNumber[interval];
+    for (i = 0, length = intervals.length; i &lt; length; i++) {
+      if (intervals[i].number() === interval) {
+        return this.root.interval(intervals[i]);
+      }
+    }
+
+    return null;
+  } else {
+    throw new Error('Invalid interval name');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+a4.fq(); // Outputs 440
+g5.fq(); // Outputs 783.9908719634985
+
+// teoria allows for crazy chaining:
+teoria.note('a')    // Create a note, A3
+  .scale('lydian')  // Create a lydian scale with that note as root (A lydian)
+  .interval('M2')   // Transpose the whole scale a major second up (B lydian)
+  .<span class="apidocCodeKeywordSpan">get</span>('third')     // Get the third note of the scale (D#4)
+  .chord('maj9')    // Create a maj9 chord with that note as root (D#maj9)
+  .toString();      // Make a string representation: 'D#maj9'
+```
+
+Documentation
+------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.interval" id="apidoc.element.teoria.Chord.prototype.interval">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>interval
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">interval = function (interval) {
+  return new Chord(this.root.interval(interval), this.symbol);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Create notes:
+var a4 = teoria.note('a4');       // Scientific notation
+var g5 = teoria.note("g''");      // Helmholtz notation
+var c3 = teoria.note.fromKey(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.<span class="apidocCodeKeywordSpan">interval</span>(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').simple();  // Returns: ["a", "b", "c#", "d", "e"
+;, "f#", "g"]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.notes" id="apidoc.element.teoria.Chord.prototype.notes">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>notes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notes = function () {
+  var root = this.root;
+  return this.voicing().map(function(interval) {
+    return root.interval(interval);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+that represents the current voicing of the chord.
+
+Here's an example:
+```javascript
+var bbmaj = teoria.chord('Bbmaj7');
+// Default voicing:
+bbmaj.voicing();  // #-&gt; ['P1', 'M3', 'P5', 'M7'];
+bbmaj.<span class="apidocCodeKeywordSpan">notes</span>();    // #-&gt; ['bb', 'd', 'f', 'a&amp;#
+x27;];
+
+// New voicing
+bbmaj.voicing(['P1', 'P5', 'M7', 'M10']);
+bbmaj.notes();    // #-&gt; ['bb', 'f', 'a', 'd'];
+```
+*NB:* Note that above returned results are pseudo-results, as they will be
+returned wrapped in `Interval` and `Note` objects.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.parallel" id="apidoc.element.teoria.Chord.prototype.parallel">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>parallel
+        <span class="apidocSignatureSpan">(additional)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parallel = function (additional) {
+  additional = additional || '';
+  var quality = this.quality();
+
+  if (this.chordType() !== 'triad' || quality === 'diminished' ||
+      quality === 'augmented') {
+    throw new Error('Only major/minor triads have parallel chords');
+  }
+
+  if (quality === 'major') {
+    return new Chord(this.root.interval('m3', 'down'), 'm');
+  } else {
+    return new Chord(this.root.interval('m3', 'up'));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.quality" id="apidoc.element.teoria.Chord.prototype.quality">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>quality
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">quality = function () {
+  var third, fifth, seventh, intervals = this.intervals;
+
+  for (var i = 0, length = intervals.length; i &lt; length; i++) {
+    if (intervals[i].number() === 3) {
+      third = intervals[i];
+    } else if (intervals[i].number() === 5) {
+      fifth = intervals[i];
+    } else if (intervals[i].number() === 7) {
+      seventh = intervals[i];
+    }
+  }
+
+  if (!third) {
+    return;
+  }
+
+  third = (third.direction() === 'down') ? third.invert() : third;
+  third = third.simple().toString();
+
+  if (fifth) {
+    fifth = (fifth.direction === 'down') ? fifth.invert() : fifth;
+    fifth = fifth.simple().toString();
+  }
+
+  if (seventh) {
+    seventh = (seventh.direction === 'down') ? seventh.invert() : seventh;
+    seventh = seventh.simple().toString();
+  }
+
+  if (third === 'M3') {
+    if (fifth === 'A5') {
+      return 'augmented';
+    } else if (fifth === 'P5') {
+      return (seventh === 'm7') ? 'dominant' : 'major';
+    }
+
+    return 'major';
+  } else if (third === 'm3') {
+    if (fifth === 'P5') {
+      return 'minor';
+    } else if (fifth === 'd5') {
+      return (seventh === 'm7') ? 'half-diminished' : 'diminished';
+    }
+
+    return 'minor';
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### Interval.base()
+- Returns the name of the simple interval (not compound)
+
+#### Interval.type()
+- Returns the type of array, either `'perfect'` (1, 4, 5, 8) or `'minor'` (2, 3, 6, 7)
+
+#### Interval.<span class="apidocCodeKeywordSpan">quality</span>([verbose])
+- The quality of the interval (`'dd'`, `'d'` `'m'`, `'P'`, `'M'`, `'A'
+;` or `'AA'`)
+
+*verbose*  is set to a truish value, then long quality names are returned:
+`'doubly diminished'`, `'diminished'`, `'minor'`, etc.
+
+#### Interval.direction([dir])
+- The direction of the interval
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.resetVoicing" id="apidoc.element.teoria.Chord.prototype.resetVoicing">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>resetVoicing
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resetVoicing = function () {
+  this._voicing = this.intervals;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.simple" id="apidoc.element.teoria.Chord.prototype.simple">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>simple
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">simple = function () {
+  return this.notes().map(function(n) { return n.toString(true); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').<span class="apidocCodeKeywordSpan">simple</span>();  // Returns: ["a", "b", &amp;#
+x22;c#", "d", "e", "f#", "g"]
+a4.scale('aeolian').simple();     // Returns: ["a", "b", "c", "d", "e"
+;, "f", "g"]
+g5.scale('ionian').simple();      // Returns: ["g", "a", "b", "c", "d"
+;, "e", "f#"]
+g5.scale('dorian');               // Returns a Scale object
+
+// Create chords with the powerful chord parser
+a4.chord('sus2').name;    // Returns the name of the chord: 'Asus2'
+c3.chord('m').name;       // Returns 'Cm'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.subdominant" id="apidoc.element.teoria.Chord.prototype.subdominant">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>subdominant
+        <span class="apidocSignatureSpan">(additional)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subdominant = function (additional) {
+  additional = additional || '';
+  return new Chord(this.root.interval('P4'), additional);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.toString" id="apidoc.element.teoria.Chord.prototype.toString">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return this.name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// teoria allows for crazy chaining:
+teoria.note('a')    // Create a note, A3
+  .scale('lydian')  // Create a lydian scale with that note as root (A lydian)
+  .interval('M2')   // Transpose the whole scale a major second up (B lydian)
+  .get('third')     // Get the third note of the scale (D#4)
+  .chord('maj9')    // Create a maj9 chord with that note as root (D#maj9)
+  .<span class="apidocCodeKeywordSpan">toString</span>();      // Make a string representation: 'D#maj9'
+```
+
+Documentation
+------------------------
+
+## teoria.note (name | coord[, duration])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.transpose" id="apidoc.element.teoria.Chord.prototype.transpose">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>transpose
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transpose = function (interval) {
+  this.root.transpose(interval);
+  this.name = this.root.name().toUpperCase() +
+              this.root.accidental() + this.symbol;
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Chord.prototype.voicing" id="apidoc.element.teoria.Chord.prototype.voicing">
+        function <span class="apidocSignatureSpan">teoria.Chord.prototype.</span>voicing
+        <span class="apidocSignatureSpan">(voicing)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">voicing = function (voicing) {
+  // Get the voicing
+  if (!voicing) {
+    return this._voicing;
+  }
+
+  // Set the voicing
+  this._voicing = [];
+  for (var i = 0, length = voicing.length; i &lt; length; i++) {
+    this._voicing[i] = Interval.toCoord(voicing[i]);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*voicing* - An optional array of intervals in simple-format
+that represents the current voicing of the chord.
+
+Here's an example:
+```javascript
+var bbmaj = teoria.chord('Bbmaj7');
+// Default voicing:
+bbmaj.<span class="apidocCodeKeywordSpan">voicing</span>();  // #-&gt; ['P1', 'M3', 'P5', '
+M7'];
+bbmaj.notes();    // #-&gt; ['bb', 'd', 'f', 'a'];
+
+// New voicing
+bbmaj.voicing(['P1', 'P5', 'M7', 'M10']);
+bbmaj.notes();    // #-&gt; ['bb', 'f', 'a', 'd'];
+```
+*NB:* Note that above returned results are pseudo-results, as they will be
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.Interval" id="apidoc.module.teoria.Interval">module teoria.Interval</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.Interval" id="apidoc.element.teoria.Interval.Interval">
+        function <span class="apidocSignatureSpan">teoria.</span>Interval
+        <span class="apidocSignatureSpan">(coord)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Interval(coord) {
+  if (!(this instanceof Interval)) return new Interval(coord);
+  this.coord = coord;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.between" id="apidoc.element.teoria.Interval.between">
+        function <span class="apidocSignatureSpan">teoria.Interval.</span>between
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">between = function (from, to) {
+  return new Interval(vector.sub(to.coord, from.coord));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Interval.from(from, to)
+ - Returns a note which is a given interval away from a root note.
+
+*from* - The `Note` which is the root of the measuring
+
+*to* - A `Interval`
+
+### Interval.<span class="apidocCodeKeywordSpan">between</span>(from, to)
+ - Returns an interval object which represents the interval between two notes.
+
+*from* and *to* are two `Note`s which are the notes that the
+interval is measured from. For example if 'a' and 'c' are given, the resulting
+interval object would represent a minor third.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.from" id="apidoc.element.teoria.Interval.from">
+        function <span class="apidocSignatureSpan">teoria.Interval.</span>from
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">from = function (from, to) {
+  return from.interval(to);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Interval(coord)
+ - A representation of a music interval
+
+### Interval.toCoord(simpleInterval)
+ - Returns a `Interval` representing the interval expressed in string form.
+
+### Interval.<span class="apidocCodeKeywordSpan">from</span>(from, to)
+ - Returns a note which is a given interval away from a root note.
+
+*from* - The `Note` which is the root of the measuring
+
+*to* - A `Interval`
+
+### Interval.between(from, to)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.invert" id="apidoc.element.teoria.Interval.invert">
+        function <span class="apidocSignatureSpan">teoria.Interval.</span>invert
+        <span class="apidocSignatureSpan">(sInterval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">invert = function (sInterval) {
+  return Interval.toCoord(sInterval).invert().toString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var c3 = teoria.note.fromKey(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).<span class="apidocCodeKeywordSpan">invert</span>(); // Returns a Interval representing
+ a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').simple();  // Returns: ["a", "b", "c#", "d", "e"
+;, "f#", "g"]
+a4.scale('aeolian').simple();     // Returns: ["a", "b", "c", "d", "e"
+;, "f", "g"]
+g5.scale('ionian').simple();      // Returns: ["g", "a", "b", "c", "d"
+;, "e", "f#"]
+g5.scale('dorian');               // Returns a Scale object
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.toCoord" id="apidoc.element.teoria.Interval.toCoord">
+        function <span class="apidocSignatureSpan">teoria.Interval.</span>toCoord
+        <span class="apidocSignatureSpan">(simple)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toCoord = function (simple) {
+  var coord = toCoord(simple);
+  if (!coord)
+    throw new Error('Invalid simple format interval');
+
+  return new Interval(coord);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### teoria.interval.invert -&gt; Interval.invert
+##### teoria.interval.toCoord -&gt; Interval.toCoord
+
+
+## Interval(coord)
+ - A representation of a music interval
+
+### Interval.<span class="apidocCodeKeywordSpan">toCoord</span>(simpleInterval)
+ - Returns a `Interval` representing the interval expressed in string form.
+
+### Interval.from(from, to)
+ - Returns a note which is a given interval away from a root note.
+
+*from* - The `Note` which is the root of the measuring
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.Interval.prototype" id="apidoc.module.teoria.Interval.prototype">module teoria.Interval.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.add" id="apidoc.element.teoria.Interval.prototype.add">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>add
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (interval) {
+  return new Interval(vector.add(this.coord, interval.coord));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.base" id="apidoc.element.teoria.Interval.prototype.base">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>base
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">base = function () {
+  var product = vector.mul(knowledge.sharp, this.qualityValue());
+  var fifth = vector.sub(this.coord, product)[1];
+  fifth = this.value() &gt; 0 ? fifth + 5 : -(fifth - 5) % 7;
+  fifth = fifth &lt; 0 ? knowledge.intervalFromFifth.length + fifth : fifth;
+
+  var name = knowledge.intervalFromFifth[fifth];
+  if (name === 'unison' &amp;&amp; this.number() &gt;= 8)
+    name = 'octave';
+
+  return name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### Interval.value()
+- The value of the interval - That is a ninth = 9, but a downwards ninth is = -9
+
+#### Interval.toString()
+- Returns the *simpleInterval* representation of the interval. E.g. `'P5'`,
+`'M3'`, `'A9'`, etc.
+
+#### Interval.<span class="apidocCodeKeywordSpan">base</span>()
+- Returns the name of the simple interval (not compound)
+
+#### Interval.type()
+- Returns the type of array, either `'perfect'` (1, 4, 5, 8) or `'minor'` (2, 3, 6, 7)
+
+#### Interval.quality([verbose])
+- The quality of the interval (`'dd'`, `'d'` `'m'`, `'P'`, `'M'`, `'A'
+;` or `'AA'`)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.direction" id="apidoc.element.teoria.Interval.prototype.direction">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>direction
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">direction = function (dir) {
+  if (dir) {
+    var is = this.value() &gt;= 1 ? 'up' : 'down';
+    if (is !== dir)
+      this.coord = vector.mul(this.coord, -1);
+
+    return this;
+  }
+  else
+    return this.value() &gt;= 1 ? 'up' : 'down';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### Interval.quality([verbose])
+- The quality of the interval (`'dd'`, `'d'` `'m'`, `'P'`, `'M'`, `'A'
+;` or `'AA'`)
+
+*verbose*  is set to a truish value, then long quality names are returned:
+`'doubly diminished'`, `'diminished'`, `'minor'`, etc.
+
+#### Interval.<span class="apidocCodeKeywordSpan">direction</span>([dir])
+- The direction of the interval
+
+*dir* - If supplied, then the interval's direction is to the `newDirection`
+which is either `'up'` or `'down'`
+
+#### Interval#semitones()
+- Returns the `number` of semitones the interval span.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.equal" id="apidoc.element.teoria.Interval.prototype.equal">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>equal
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equal = function (interval) {
+    return this.coord[0] === interval.coord[0] &amp;&amp;
+        this.coord[1] === interval.coord[1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.greater" id="apidoc.element.teoria.Interval.prototype.greater">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>greater
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">greater = function (interval) {
+  var semi = this.semitones();
+  var isemi = interval.semitones();
+
+  // If equal in absolute size, measure which interval is bigger
+  // For example P4 is bigger than A3
+  return (semi === isemi) ?
+    (this.number() &gt; interval.number()) : (semi &gt; isemi);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.invert" id="apidoc.element.teoria.Interval.prototype.invert">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>invert
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">invert = function () {
+  var i = this.base();
+  var qual = this.qualityValue();
+  var acc = this.type() === 'minor' ? -(qual - 1) : -qual;
+  var idx = 9 - knowledge.stepNumber[i] - 1;
+  var coord = knowledge.intervals[knowledge.intervalsIndex[idx]];
+  coord = vector.add(coord, vector.mul(knowledge.sharp, acc));
+
+  return new Interval(coord);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var c3 = teoria.note.fromKey(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).<span class="apidocCodeKeywordSpan">invert</span>(); // Returns a Interval representing
+ a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').simple();  // Returns: ["a", "b", "c#", "d", "e"
+;, "f#", "g"]
+a4.scale('aeolian').simple();     // Returns: ["a", "b", "c", "d", "e"
+;, "f", "g"]
+g5.scale('ionian').simple();      // Returns: ["g", "a", "b", "c", "d"
+;, "e", "f#"]
+g5.scale('dorian');               // Returns a Scale object
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.isCompound" id="apidoc.element.teoria.Interval.prototype.isCompound">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>isCompound
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isCompound = function () {
+  return this.number() &gt; 8;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.name" id="apidoc.element.teoria.Interval.prototype.name">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>name
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">name = function () {
+  return knowledge.intervalsIndex[this.number() - 1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### teoria.note.fromString(note)
+ - Returns an instance of Note representing the note name
+
+*note* - The name argument is the note name as a string. The note can both
+be expressed in scientific and Helmholtz notation.
+Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#''`, `Ab2`
+
+#### Note.<span class="apidocCodeKeywordSpan">name</span>()
+ - The name of the note, in lowercase letter (*only* the name, not the
+ accidental signs)
+
+#### Note.octave()
+ - The numeric value of the octave of the note
+
+#### Note.duration
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.number" id="apidoc.element.teoria.Interval.prototype.number">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>number
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">number = function () {
+  return Math.abs(this.value());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+The number may be prefixed with a `-` to signify that its direction is down. E.g.:
+
+`m-3` means a descending minor third, and `P-5` means a descending perfect fifth.
+
+#### Interval.coord
+- The interval representation of the interval
+
+#### Interval.<span class="apidocCodeKeywordSpan">number</span>()
+- The interval number (A ninth = 9, A seventh = 7, fifteenth = 15)
+
+#### Interval.value()
+- The value of the interval - That is a ninth = 9, but a downwards ninth is = -9
+
+#### Interval.toString()
+- Returns the *simpleInterval* representation of the interval. E.g. `'P5'`,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.octaves" id="apidoc.element.teoria.Interval.prototype.octaves">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>octaves
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">octaves = function () {
+  var toSubtract, without, octaves;
+
+  if (this.direction() === 'up') {
+    toSubtract = vector.mul(knowledge.sharp, this.qualityValue());
+    without = vector.sub(this.coord, toSubtract);
+    octaves = without[0] - knowledge.intervals[this.base()][0];
+  } else {
+    toSubtract = vector.mul(knowledge.sharp, -this.qualityValue());
+    without = vector.sub(this.coord, toSubtract);
+    octaves = -(without[0] + knowledge.intervals[this.base()][0]);
+  }
+
+  return octaves;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.quality" id="apidoc.element.teoria.Interval.prototype.quality">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>quality
+        <span class="apidocSignatureSpan">(lng)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">quality = function (lng) {
+  var quality = knowledge.alterations[this.type()][this.qualityValue() + 2];
+
+  return lng ? knowledge.qualityLong[quality] : quality;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### Interval.base()
+- Returns the name of the simple interval (not compound)
+
+#### Interval.type()
+- Returns the type of array, either `'perfect'` (1, 4, 5, 8) or `'minor'` (2, 3, 6, 7)
+
+#### Interval.<span class="apidocCodeKeywordSpan">quality</span>([verbose])
+- The quality of the interval (`'dd'`, `'d'` `'m'`, `'P'`, `'M'`, `'A'
+;` or `'AA'`)
+
+*verbose*  is set to a truish value, then long quality names are returned:
+`'doubly diminished'`, `'diminished'`, `'minor'`, etc.
+
+#### Interval.direction([dir])
+- The direction of the interval
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.qualityValue" id="apidoc.element.teoria.Interval.prototype.qualityValue">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>qualityValue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">qualityValue = function () {
+  if (this.direction() === 'down')
+    return Math.floor((-this.coord[1] - 2) / 7) + 1;
+  else
+    return Math.floor((this.coord[1] - 2) / 7) + 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.semitones" id="apidoc.element.teoria.Interval.prototype.semitones">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>semitones
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">semitones = function () {
+  return vector.sum(vector.mul(this.coord, [12, 7]));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.simple" id="apidoc.element.teoria.Interval.prototype.simple">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>simple
+        <span class="apidocSignatureSpan">(ignore)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">simple = function (ignore) {
+  // Get the (upwards) base interval (with quality)
+  var simple = knowledge.intervals[this.base()];
+  var toAdd = vector.mul(knowledge.sharp, this.qualityValue());
+  simple = vector.add(simple, toAdd);
+
+  // Turn it around if necessary
+  if (!ignore)
+    simple = this.direction() === 'down' ? vector.mul(simple, -1) : simple;
+
+  return new Interval(simple);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').<span class="apidocCodeKeywordSpan">simple</span>();  // Returns: ["a", "b", &amp;#
+x22;c#", "d", "e", "f#", "g"]
+a4.scale('aeolian').simple();     // Returns: ["a", "b", "c", "d", "e"
+;, "f", "g"]
+g5.scale('ionian').simple();      // Returns: ["g", "a", "b", "c", "d"
+;, "e", "f#"]
+g5.scale('dorian');               // Returns a Scale object
+
+// Create chords with the powerful chord parser
+a4.chord('sus2').name;    // Returns the name of the chord: 'Asus2'
+c3.chord('m').name;       // Returns 'Cm'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.smaller" id="apidoc.element.teoria.Interval.prototype.smaller">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>smaller
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">smaller = function (interval) {
+  return !this.equal(interval) &amp;&amp; !this.greater(interval);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.toString" id="apidoc.element.teoria.Interval.prototype.toString">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>toString
+        <span class="apidocSignatureSpan">(ignore)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function (ignore) {
+  // If given true, return the positive value
+  var number = ignore ? this.number() : this.value();
+
+  return this.quality() + number;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// teoria allows for crazy chaining:
+teoria.note('a')    // Create a note, A3
+  .scale('lydian')  // Create a lydian scale with that note as root (A lydian)
+  .interval('M2')   // Transpose the whole scale a major second up (B lydian)
+  .get('third')     // Get the third note of the scale (D#4)
+  .chord('maj9')    // Create a maj9 chord with that note as root (D#maj9)
+  .<span class="apidocCodeKeywordSpan">toString</span>();      // Make a string representation: 'D#maj9'
+```
+
+Documentation
+------------------------
+
+## teoria.note (name | coord[, duration])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.type" id="apidoc.element.teoria.Interval.prototype.type">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>type
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">type = function () {
+  return knowledge.intervals[this.base()][0] &lt;= 1 ? 'perfect' : 'minor';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### Interval.toString()
+- Returns the *simpleInterval* representation of the interval. E.g. `'P5'`,
+`'M3'`, `'A9'`, etc.
+
+#### Interval.base()
+- Returns the name of the simple interval (not compound)
+
+#### Interval.<span class="apidocCodeKeywordSpan">type</span>()
+- Returns the type of array, either `'perfect'` (1, 4, 5, 8) or `'minor'` (2, 3, 6, 7)
+
+#### Interval.quality([verbose])
+- The quality of the interval (`'dd'`, `'d'` `'m'`, `'P'`, `'M'`, `'A'
+;` or `'AA'`)
+
+*verbose*  is set to a truish value, then long quality names are returned:
+`'doubly diminished'`, `'diminished'`, `'minor'`, etc.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Interval.prototype.value" id="apidoc.element.teoria.Interval.prototype.value">
+        function <span class="apidocSignatureSpan">teoria.Interval.prototype.</span>value
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">value = function () {
+  var toMultiply = Math.floor((this.coord[1] - 2) / 7) + 1;
+  var product = vector.mul(knowledge.sharp, toMultiply);
+  var without = vector.sub(this.coord, product);
+  var i = knowledge.intervalFromFifth[without[1] + 5];
+  var diff = without[0] - knowledge.intervals[i][0];
+  var val = knowledge.stepNumber[i] + diff * 7;
+
+  return (val &gt; 0) ? val : val - 2;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### Interval.coord
+ - The interval representation of the interval
+
+#### Interval.number()
+ - The interval number (A ninth = 9, A seventh = 7, fifteenth = 15)
+
+#### Interval.<span class="apidocCodeKeywordSpan">value</span>()
+ - The value of the interval - That is a ninth = 9, but a downwards ninth is = -9
+
+#### Interval.toString()
+ - Returns the *simpleInterval* representation of the interval. E.g. `'P5'`,
+ `'M3'`, `'A9'`, etc.
+
+#### Interval.base()
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.Note" id="apidoc.module.teoria.Note">module teoria.Note</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.Note" id="apidoc.element.teoria.Note.Note">
+        function <span class="apidocSignatureSpan">teoria.</span>Note
+        <span class="apidocSignatureSpan">(coord, duration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Note(coord, duration) {
+  if (!(this instanceof Note)) return new Note(coord, duration);
+  duration = duration || {};
+
+  this.duration = { value: duration.value || 4, dots: duration.dots || 0 };
+  this.coord = coord;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.fromFrequency" id="apidoc.element.teoria.Note.fromFrequency">
+        function <span class="apidocSignatureSpan">teoria.Note.</span>fromFrequency
+        <span class="apidocSignatureSpan">(fq, concertPitch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromFrequency = function (fq, concertPitch) {
+  var key, cents, originalFq;
+  concertPitch = concertPitch || 440;
+
+  key = 49 + 12 * ((Math.log(fq) - Math.log(concertPitch)) / Math.log(2));
+  key = Math.round(key);
+  originalFq = concertPitch * Math.pow(2, (key - 49) / 12);
+  cents = 1200 * (Math.log(fq / originalFq) / Math.log(2));
+
+  return { note: Note.fromKey(key), cents: cents };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Create chords with the powerful chord parser
+a4.chord('sus2').name;    // Returns the name of the chord: 'Asus2'
+c3.chord('m').name;       // Returns 'Cm'
+teoria.chord('Ab#5b9');   // Returns a Chord object, representing a Ab#5b9 chord
+g5.chord('dim');          // Returns a Chord object, representing a Gdim chord
+
+// Calculate note frequencies or find the note corresponding to a frequency
+teoria.note.<span class="apidocCodeKeywordSpan">fromFrequency</span>(467); // Returns: {'note':{...},'cents':
+3.102831} -&gt; A4# a little out of tune.
+a4.fq(); // Outputs 440
+g5.fq(); // Outputs 783.9908719634985
+
+// teoria allows for crazy chaining:
+teoria.note('a')    // Create a note, A3
+.scale('lydian')  // Create a lydian scale with that note as root (A lydian)
+.interval('M2')   // Transpose the whole scale a major second up (B lydian)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.fromKey" id="apidoc.element.teoria.Note.fromKey">
+        function <span class="apidocSignatureSpan">teoria.Note.</span>fromKey
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromKey = function (key) {
+  var octave = Math.floor((key - 4) / 12);
+  var distance = key - (octave * 12) - 4;
+  var name = knowledge.fifths[(2 * Math.round(distance / 2) + 1) % 7];
+  var subDiff = vector.sub(knowledge.notes[name], knowledge.A4);
+  var note = vector.add(subDiff, [octave + 1, 0]);
+  var diff = (key - 49) - vector.sum(vector.mul(note, [12, 7]));
+
+  var arg = diff ? vector.add(note, vector.mul(knowledge.sharp, diff)) : note;
+  return new Note(arg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+for a technical library reference, look further down this document.
+
+```javascript
+
+// Create notes:
+var a4 = teoria.note('a4');       // Scientific notation
+var g5 = teoria.note("g''");      // Helmholtz notation
+var c3 = teoria.note.<span class="apidocCodeKeywordSpan">fromKey</span>(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.fromMIDI" id="apidoc.element.teoria.Note.fromMIDI">
+        function <span class="apidocSignatureSpan">teoria.Note.</span>fromMIDI
+        <span class="apidocSignatureSpan">(note)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromMIDI = function (note) {
+  return Note.fromKey(note - 20);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### teoria.note.fromFrequency(fq)
+A static method returns an object containing two elements:
+
+*note* - A `Note` which corresponds to the closest note with the given frequency
+
+*cents* - A number value of how many cents the note is out of tune
+
+### teoria.note.<span class="apidocCodeKeywordSpan">fromMIDI</span>(note)
+- Returns an instance of Note set to the corresponding MIDI note value.
+
+*note* - A number ranging from 0-127 representing a MIDI note value
+
+### teoria.note.fromString(note)
+- Returns an instance of Note representing the note name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.fromString" id="apidoc.element.teoria.Note.fromString">
+        function <span class="apidocSignatureSpan">teoria.Note.</span>fromString
+        <span class="apidocSignatureSpan">(name, dur)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromString = function (name, dur) {
+  var coord = scientific(name);
+  if (!coord) coord = helmholtz(name);
+  return new Note(coord, dur);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*cents* - A number value of how many cents the note is out of tune
+
+### teoria.note.fromMIDI(note)
+ - Returns an instance of Note set to the corresponding MIDI note value.
+
+*note* - A number ranging from 0-127 representing a MIDI note value
+
+### teoria.note.<span class="apidocCodeKeywordSpan">fromString</span>(note)
+ - Returns an instance of Note representing the note name
+
+*note* - The name argument is the note name as a string. The note can both
+be expressed in scientific and Helmholtz notation.
+Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#''`, `Ab2`
+
+#### Note.name()
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.Note.prototype" id="apidoc.module.teoria.Note.prototype">module teoria.Note.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.accidental" id="apidoc.element.teoria.Note.prototype.accidental">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>accidental
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">accidental = function () {
+  return knowledge.accidentals[this.accidentalValue() + 2];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### Note.octave()
+ - The numeric value of the octave of the note
+
+#### Note.duration
+ - The duration object as described in the constructor for Note
+
+#### Note.<span class="apidocCodeKeywordSpan">accidental</span>()
+ - Returns the string symbolic of the accidental sign (`x`, `#`, `b` or `bb`)
+
+#### Note.accidentalValue()
+ - Returns the numeric value (mostly used internally) of the sign:
+`x = 2, # = 1, b = -1, bb = -2`
+
+#### Note#key([whitenotes])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.accidentalValue" id="apidoc.element.teoria.Note.prototype.accidentalValue">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>accidentalValue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">accidentalValue = function () {
+  return Math.round((this.coord[1] + knowledge.A4[1] - 2) / 7);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### Note.duration
+ - The duration object as described in the constructor for Note
+
+#### Note.accidental()
+ - Returns the string symbolic of the accidental sign (`x`, `#`, `b` or `bb`)
+
+#### Note.<span class="apidocCodeKeywordSpan">accidentalValue</span>()
+ - Returns the numeric value (mostly used internally) of the sign:
+`x = 2, # = 1, b = -1, bb = -2`
+
+#### Note#key([whitenotes])
+ - Returns the piano key number. E.g. A4 would return 49
+
+*whitenotes* - If this parameter is set to `true` only the white keys will
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.chord" id="apidoc.element.teoria.Note.prototype.chord">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>chord
+        <span class="apidocSignatureSpan">(chord)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chord = function (chord) {
+  var isShortChord = chord in knowledge.chordShort;
+  chord = isShortChord ? knowledge.chordShort[chord] : chord;
+
+  return new Chord(this, chord);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Create scales, based on notes.
+a4.scale('mixolydian').simple();  // Returns: ["a", "b", "c#", "d", "e"
+;, "f#", "g"]
+a4.scale('aeolian').simple();     // Returns: ["a", "b", "c", "d", "e"
+;, "f", "g"]
+g5.scale('ionian').simple();      // Returns: ["g", "a", "b", "c", "d"
+;, "e", "f#"]
+g5.scale('dorian');               // Returns a Scale object
+
+// Create chords with the powerful chord parser
+a4.<span class="apidocCodeKeywordSpan">chord</span>('sus2').name;    // Returns the name of the chord: 'Asus2'
+;
+c3.chord('m').name;       // Returns 'Cm'
+teoria.chord('Ab#5b9');   // Returns a Chord object, representing a Ab#5b9 chord
+g5.chord('dim');          // Returns a Chord object, representing a Gdim chord
+
+// Calculate note frequencies or find the note corresponding to a frequency
+teoria.note.fromFrequency(467); // Returns: {'note':{...},'cents':3.102831} -&gt; A4# a little out of tune
+.
+a4.fq(); // Outputs 440
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.chroma" id="apidoc.element.teoria.Note.prototype.chroma">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>chroma
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chroma = function () {
+  var value = (vector.sum(vector.mul(this.coord, [12, 7])) - 3) % 12;
+
+  return (value &lt; 0) ? value + 12 : value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+concert pitch which is 440hz. This is useful for some classical music.
+
+#### Note#chroma()
+ - Returns the pitch class (index) of the note.
+
+This allows for easy enharmonic checking:
+
+    teoria.note('e').<span class="apidocCodeKeywordSpan">chroma</span>() === teoria.note('fb').chroma();
+
+The chroma number is ranging from pitch class C which is 0 to 11 which is B
+
+#### Note#scale(scaleName)
+ - Returns an instance of Scale, with the tonic/root set to this note.
+
+*scaleName* - The name of the scale to be returned. `'minor'`,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.durationInSeconds" id="apidoc.element.teoria.Note.prototype.durationInSeconds">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>durationInSeconds
+        <span class="apidocSignatureSpan">(bpm, beatUnit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">durationInSeconds = function (bpm, beatUnit) {
+  var secs = (60 / bpm) / (this.duration.value / 4) / (beatUnit / 4);
+  return secs * 2 - secs / Math.pow(2, this.duration.dots);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.durationName" id="apidoc.element.teoria.Note.prototype.durationName">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>durationName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">durationName = function () {
+  return knowledge.durations[this.duration.value];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+*showOctaves* - A boolean. If set to true, a "Helmholtz-like" notation will be
+used if there's bigger intervals than an octave
+
+#### Note#durationName()
+- Returns the duration name.
+
+Examples: `teoria.note('A', 8).<span class="apidocCodeKeywordSpan">durationName</span>() -&gt; 'eighth'`,
+`teoria.note('C', 16).durationName() -&gt; 'sixteenth'`
+
+#### Note#scaleDegree(scale)
+- Returns this note's degree in a given scale (Scale). For example a
+`D` in a C major scale will return `2` as it is the second degree of that scale.
+If however the note *isn't* a part of the scale, the degree returned will be
+`0`, meaning that the degree doesn't exist. This allows this method to be both
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.enharmonics" id="apidoc.element.teoria.Note.prototype.enharmonics">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>enharmonics
+        <span class="apidocSignatureSpan">(oneaccidental)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enharmonics = function (oneaccidental) {
+  var key = this.key(), limit = oneaccidental ? 2 : 3;
+
+  return ['m3', 'm2', 'm-2', 'm-3']
+    .map(this.interval.bind(this))
+    .filter(function(note) {
+    var acc = note.accidentalValue();
+    var diff = key - (note.key() - acc);
+
+    if (diff &lt; limit &amp;&amp; diff &gt; -limit) {
+      var product = vector.mul(knowledge.sharp, diff - acc);
+      note.coord = vector.add(note.coord, product);
+      return true;
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### Note#enharmonics(oneAccidental)
+ - Returns all notes that are enharmonic with the note
+
+*oneAccidental* - Boolean, if set to true, only enharmonic notes with one
+accidental is returned. E.g. results such as 'eb' and 'c#' but not 'ebb' and 'cx'
+
+```javascript
+teoria.note('c').<span class="apidocCodeKeywordSpan">enharmonics</span>().toString();
+// -&gt; 'dbb, b#'
+
+teoria.note('c').enharmonics(true).toString();
+// -&gt; 'b#'
+```
+
+#### Note#durationInSeconds(bpm, beatUnit)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.fq" id="apidoc.element.teoria.Note.prototype.fq">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>fq
+        <span class="apidocSignatureSpan">(concertPitch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fq = function (concertPitch) {
+  return pitchFq(this.coord, concertPitch);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+a4.chord('sus2').name;    // Returns the name of the chord: 'Asus2'
+c3.chord('m').name;       // Returns 'Cm'
+teoria.chord('Ab#5b9');   // Returns a Chord object, representing a Ab#5b9 chord
+g5.chord('dim');          // Returns a Chord object, representing a Gdim chord
+
+// Calculate note frequencies or find the note corresponding to a frequency
+teoria.note.fromFrequency(467); // Returns: {'note':{...},'cents':3.102831} -&gt; A4# a little out of tune
+.
+a4.<span class="apidocCodeKeywordSpan">fq</span>(); // Outputs 440
+g5.fq(); // Outputs 783.9908719634985
+
+// teoria allows for crazy chaining:
+teoria.note('a')    // Create a note, A3
+.scale('lydian')  // Create a lydian scale with that note as root (A lydian)
+.interval('M2')   // Transpose the whole scale a major second up (B lydian)
+.get('third')     // Get the third note of the scale (D#4)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.helmholtz" id="apidoc.element.teoria.Note.prototype.helmholtz">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>helmholtz
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">helmholtz = function () {
+  var octave = this.octave();
+  var name = this.name();
+  name = octave &lt; 3 ? name.toUpperCase() : name.toLowerCase();
+  var padchar = octave &lt; 3 ? ',' : '\'';
+  var padcount = octave &lt; 2 ? 2 - octave : octave - 3;
+
+  return pad(name + this.accidental(), padchar, padcount);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*name* - The name attribute is the last part of the chord symbol.
+Examples: `'m7'`, `'#5b9'`, `'major'`. If the name parameter
+isn't set, a standard major chord will be returned.
+
+#### Note#helmholtz()
+ - Returns the note name formatted in Helmholtz notation.
+
+Example: `teoria.note('A5').<span class="apidocCodeKeywordSpan">helmholtz</span>() -&gt; "a''"`
+
+#### Note#scientific()
+ - Returns the note name formatted in scientific notation.
+
+Example: `teoria.note("ab'").scientific() -&gt; "Ab4"`
+
+#### Note#enharmonics(oneAccidental)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.interval" id="apidoc.element.teoria.Note.prototype.interval">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>interval
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">interval = function (interval) {
+  if (typeof interval === 'string') interval = Interval.toCoord(interval);
+
+  if (interval instanceof Interval)
+    return new Note(vector.add(this.coord, interval.coord));
+  else if (interval instanceof Note)
+    return new Interval(vector.sub(interval.coord, this.coord));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Create notes:
+var a4 = teoria.note('a4');       // Scientific notation
+var g5 = teoria.note("g''");      // Helmholtz notation
+var c3 = teoria.note.fromKey(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.<span class="apidocCodeKeywordSpan">interval</span>(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').simple();  // Returns: ["a", "b", "c#", "d", "e"
+;, "f#", "g"]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.key" id="apidoc.element.teoria.Note.prototype.key">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>key
+        <span class="apidocSignatureSpan">(white)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">key = function (white) {
+  if (white)
+    return this.coord[0] * 7 + this.coord[1] * 4 + 29;
+  else
+    return this.coord[0] * 12 + this.coord[1] * 7 + 49;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.midi" id="apidoc.element.teoria.Note.prototype.midi">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>midi
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">midi = function () {
+  return this.key() + 20;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.name" id="apidoc.element.teoria.Note.prototype.name">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>name
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">name = function () {
+  var value = this.accidentalValue();
+  var idx = this.coord[1] + knowledge.A4[1] - value * 7 + 1;
+  return knowledge.fifths[idx];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### teoria.note.fromString(note)
+ - Returns an instance of Note representing the note name
+
+*note* - The name argument is the note name as a string. The note can both
+be expressed in scientific and Helmholtz notation.
+Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#''`, `Ab2`
+
+#### Note.<span class="apidocCodeKeywordSpan">name</span>()
+ - The name of the note, in lowercase letter (*only* the name, not the
+ accidental signs)
+
+#### Note.octave()
+ - The numeric value of the octave of the note
+
+#### Note.duration
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.octave" id="apidoc.element.teoria.Note.prototype.octave">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>octave
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">octave = function () {
+  return this.coord[0] + knowledge.A4[0] - knowledge.notes[this.name()][0] +
+    this.accidentalValue() * 4;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+be expressed in scientific and Helmholtz notation.
+Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#''`, `Ab2`
+
+#### Note.name()
+- The name of the note, in lowercase letter (*only* the name, not the
+accidental signs)
+
+#### Note.<span class="apidocCodeKeywordSpan">octave</span>()
+- The numeric value of the octave of the note
+
+#### Note.duration
+- The duration object as described in the constructor for Note
+
+#### Note.accidental()
+- Returns the string symbolic of the accidental sign (`x`, `#`, `b` or `bb`)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.scale" id="apidoc.element.teoria.Note.prototype.scale">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>scale
+        <span class="apidocSignatureSpan">(scale)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scale = function (scale) {
+  return new Scale(this, scale);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+
+// Create scales, based on notes.
+a4.<span class="apidocCodeKeywordSpan">scale</span>('mixolydian').simple();  // Returns: ["a", "b", &amp;#
+x22;c#", "d", "e", "f#", "g"]
+a4.scale('aeolian').simple();     // Returns: ["a", "b", "c", "d", "e"
+;, "f", "g"]
+g5.scale('ionian').simple();      // Returns: ["g", "a", "b", "c", "d"
+;, "e", "f#"]
+g5.scale('dorian');               // Returns a Scale object
+
+// Create chords with the powerful chord parser
+a4.chord('sus2').name;    // Returns the name of the chord: 'Asus2'
+c3.chord('m').name;       // Returns 'Cm'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.scaleDegree" id="apidoc.element.teoria.Note.prototype.scaleDegree">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>scaleDegree
+        <span class="apidocSignatureSpan">(scale)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scaleDegree = function (scale) {
+  var inter = scale.tonic.interval(this);
+
+  // If the direction is down, or we're dealing with an octave - invert it
+  if (inter.direction() === 'down' ||
+     (inter.coord[1] === 0 &amp;&amp; inter.coord[0] !== 0)) {
+    inter = inter.invert();
+  }
+
+  inter = inter.simple(true).coord;
+
+  return scale.scale.reduce(function(index, current, i) {
+    var coord = Interval.toCoord(current).coord;
+    return coord[0] === inter[0] &amp;&amp; coord[1] === inter[1] ? i + 1 : index;
+  }, 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.scientific" id="apidoc.element.teoria.Note.prototype.scientific">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>scientific
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scientific = function () {
+  return this.name().toUpperCase() + this.accidental() + this.octave();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ - Returns the note name formatted in Helmholtz notation.
+
+Example: `teoria.note('A5').helmholtz() -&gt; "a''"`
+
+#### Note#scientific()
+ - Returns the note name formatted in scientific notation.
+
+Example: `teoria.note("ab'").<span class="apidocCodeKeywordSpan">scientific</span>() -&gt; "Ab4"`
+
+#### Note#enharmonics(oneAccidental)
+ - Returns all notes that are enharmonic with the note
+
+*oneAccidental* - Boolean, if set to true, only enharmonic notes with one
+accidental is returned. E.g. results such as 'eb' and 'c#' but not 'ebb' and 'cx'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.solfege" id="apidoc.element.teoria.Note.prototype.solfege">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>solfege
+        <span class="apidocSignatureSpan">(scale, showOctaves)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">solfege = function (scale, showOctaves) {
+  var interval = scale.tonic.interval(this), solfege, stroke, count;
+  if (interval.direction() === 'down')
+    interval = interval.invert();
+
+  if (showOctaves) {
+    count = (this.key(true) - scale.tonic.key(true)) / 7;
+    count = (count &gt;= 0) ? Math.floor(count) : -(Math.ceil(-count));
+    stroke = (count &gt;= 0) ? '\'' : ',';
+  }
+
+  solfege = knowledge.intervalSolfege[interval.simple(true).toString()];
+  return (showOctaves) ? pad(solfege, stroke, Math.abs(count)) : solfege;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.toString" id="apidoc.element.teoria.Note.prototype.toString">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>toString
+        <span class="apidocSignatureSpan">(dont)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function (dont) {
+  return this.name() + this.accidental() + (dont ? '' : this.octave());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// teoria allows for crazy chaining:
+teoria.note('a')    // Create a note, A3
+  .scale('lydian')  // Create a lydian scale with that note as root (A lydian)
+  .interval('M2')   // Transpose the whole scale a major second up (B lydian)
+  .get('third')     // Get the third note of the scale (D#4)
+  .chord('maj9')    // Create a maj9 chord with that note as root (D#maj9)
+  .<span class="apidocCodeKeywordSpan">toString</span>();      // Make a string representation: 'D#maj9'
+```
+
+Documentation
+------------------------
+
+## teoria.note (name | coord[, duration])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Note.prototype.transpose" id="apidoc.element.teoria.Note.prototype.transpose">
+        function <span class="apidocSignatureSpan">teoria.Note.prototype.</span>transpose
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transpose = function (interval) {
+  this.coord = vector.add(this.coord, interval.coord);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.Scale" id="apidoc.module.teoria.Scale">module teoria.Scale</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Scale.Scale" id="apidoc.element.teoria.Scale.Scale">
+        function <span class="apidocSignatureSpan">teoria.</span>Scale
+        <span class="apidocSignatureSpan">(tonic, scale)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Scale(tonic, scale) {
+  if (!(this instanceof Scale)) return new Scale(tonic, scale);
+  var scaleName, i;
+  if (!('coord' in tonic)) {
+    throw new Error('Invalid Tonic');
+  }
+
+  if (typeof scale === 'string') {
+    scaleName = scale;
+    scale = scales[scale];
+    if (!scale)
+      throw new Error('Invalid Scale');
+  } else {
+    for (i in scales) {
+      if (scales.hasOwnProperty(i)) {
+        if (scales[i].toString() === scale.toString()) {
+          scaleName = i;
+          break;
+        }
+      }
+    }
+  }
+
+  this.name = scaleName;
+  this.tonic = tonic;
+  this.scale = scale;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.Scale.prototype" id="apidoc.module.teoria.Scale.prototype">module teoria.Scale.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Scale.prototype.get" id="apidoc.element.teoria.Scale.prototype.get">
+        function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>get
+        <span class="apidocSignatureSpan">(i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (i) {
+  var isStepStr = typeof i === 'string' &amp;&amp; i in knowledge.stepNumber;
+  i = isStepStr ? knowledge.stepNumber[i] : i;
+
+  return this.tonic.interval(this.scale[i - 1]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+a4.fq(); // Outputs 440
+g5.fq(); // Outputs 783.9908719634985
+
+// teoria allows for crazy chaining:
+teoria.note('a')    // Create a note, A3
+  .scale('lydian')  // Create a lydian scale with that note as root (A lydian)
+  .interval('M2')   // Transpose the whole scale a major second up (B lydian)
+  .<span class="apidocCodeKeywordSpan">get</span>('third')     // Get the third note of the scale (D#4)
+  .chord('maj9')    // Create a maj9 chord with that note as root (D#maj9)
+  .toString();      // Make a string representation: 'D#maj9'
+```
+
+Documentation
+------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Scale.prototype.interval" id="apidoc.element.teoria.Scale.prototype.interval">
+        function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>interval
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">interval = function (interval) {
+  interval = (typeof interval === 'string') ?
+    Interval.toCoord(interval) : interval;
+  return new Scale(this.tonic.interval(interval), this.scale);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Create notes:
+var a4 = teoria.note('a4');       // Scientific notation
+var g5 = teoria.note("g''");      // Helmholtz notation
+var c3 = teoria.note.fromKey(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.<span class="apidocCodeKeywordSpan">interval</span>(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').simple();  // Returns: ["a", "b", "c#", "d", "e"
+;, "f#", "g"]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Scale.prototype.notes" id="apidoc.element.teoria.Scale.prototype.notes">
+        function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>notes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notes = function () {
+  var notes = [];
+
+  for (var i = 0, length = this.scale.length; i &lt; length; i++) {
+    notes.push(this.tonic.interval(this.scale[i]));
+  }
+
+  return notes;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+that represents the current voicing of the chord.
+
+Here's an example:
+```javascript
+var bbmaj = teoria.chord('Bbmaj7');
+// Default voicing:
+bbmaj.voicing();  // #-&gt; ['P1', 'M3', 'P5', 'M7'];
+bbmaj.<span class="apidocCodeKeywordSpan">notes</span>();    // #-&gt; ['bb', 'd', 'f', 'a&amp;#
+x27;];
+
+// New voicing
+bbmaj.voicing(['P1', 'P5', 'M7', 'M10']);
+bbmaj.notes();    // #-&gt; ['bb', 'f', 'a', 'd'];
+```
+*NB:* Note that above returned results are pseudo-results, as they will be
+returned wrapped in `Interval` and `Note` objects.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Scale.prototype.simple" id="apidoc.element.teoria.Scale.prototype.simple">
+        function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>simple
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">simple = function () {
+  return this.notes().map(function(n) { return n.toString(true); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').<span class="apidocCodeKeywordSpan">simple</span>();  // Returns: ["a", "b", &amp;#
+x22;c#", "d", "e", "f#", "g"]
+a4.scale('aeolian').simple();     // Returns: ["a", "b", "c", "d", "e"
+;, "f", "g"]
+g5.scale('ionian').simple();      // Returns: ["g", "a", "b", "c", "d"
+;, "e", "f#"]
+g5.scale('dorian');               // Returns a Scale object
+
+// Create chords with the powerful chord parser
+a4.chord('sus2').name;    // Returns the name of the chord: 'Asus2'
+c3.chord('m').name;       // Returns 'Cm'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Scale.prototype.solfege" id="apidoc.element.teoria.Scale.prototype.solfege">
+        function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>solfege
+        <span class="apidocSignatureSpan">(index, showOctaves)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">solfege = function (index, showOctaves) {
+  if (index)
+    return this.get(index).solfege(this, showOctaves);
+
+  return this.notes().map(function(n) {
+    return n.solfege(this, showOctaves);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Scale.prototype.transpose" id="apidoc.element.teoria.Scale.prototype.transpose">
+        function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>transpose
+        <span class="apidocSignatureSpan">(interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transpose = function (interval) {
+  var scale = this.interval(interval);
+  this.scale = scale.scale;
+  this.tonic = scale.tonic;
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.Scale.prototype.type" id="apidoc.element.teoria.Scale.prototype.type">
+        function <span class="apidocSignatureSpan">teoria.Scale.prototype.</span>type
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">type = function () {
+  var length = this.scale.length - 2;
+  if (length &lt; 8) {
+    return ['di', 'tri', 'tetra', 'penta', 'hexa', 'hepta', 'octa'][length] +
+      'tonic';
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### Interval.toString()
+- Returns the *simpleInterval* representation of the interval. E.g. `'P5'`,
+`'M3'`, `'A9'`, etc.
+
+#### Interval.base()
+- Returns the name of the simple interval (not compound)
+
+#### Interval.<span class="apidocCodeKeywordSpan">type</span>()
+- Returns the type of array, either `'perfect'` (1, 4, 5, 8) or `'minor'` (2, 3, 6, 7)
+
+#### Interval.quality([verbose])
+- The quality of the interval (`'dd'`, `'d'` `'m'`, `'P'`, `'M'`, `'A'
+;` or `'AA'`)
+
+*verbose*  is set to a truish value, then long quality names are returned:
+`'doubly diminished'`, `'diminished'`, `'minor'`, etc.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.interval" id="apidoc.module.teoria.interval">module teoria.interval</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.interval.interval" id="apidoc.element.teoria.interval.interval">
+        function <span class="apidocSignatureSpan">teoria.</span>interval
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function intervalConstructor(from, to) {
+  // Construct a Interval object from string representation
+  if (typeof from === 'string')
+    return Interval.toCoord(from);
+
+  if (typeof to === 'string' &amp;&amp; from instanceof Note)
+    return Interval.from(from, Interval.toCoord(to));
+
+  if (to instanceof Interval &amp;&amp; from instanceof Note)
+    return Interval.from(from, to);
+
+  if (to instanceof Note &amp;&amp; from instanceof Note)
+    return Interval.between(from, to);
+
+  throw new Error('Invalid parameters');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Create notes:
+var a4 = teoria.note('a4');       // Scientific notation
+var g5 = teoria.note("g''");      // Helmholtz notation
+var c3 = teoria.note.fromKey(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.<span class="apidocCodeKeywordSpan">interval</span>(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').simple();  // Returns: ["a", "b", "c#", "d", "e"
+;, "f#", "g"]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.interval.between" id="apidoc.element.teoria.interval.between">
+        function <span class="apidocSignatureSpan">teoria.interval.</span>between
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">between = function (from, to) {
+  return new Interval(vector.sub(to.coord, from.coord));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Interval.from(from, to)
+ - Returns a note which is a given interval away from a root note.
+
+*from* - The `Note` which is the root of the measuring
+
+*to* - A `Interval`
+
+### Interval.<span class="apidocCodeKeywordSpan">between</span>(from, to)
+ - Returns an interval object which represents the interval between two notes.
+
+*from* and *to* are two `Note`s which are the notes that the
+interval is measured from. For example if 'a' and 'c' are given, the resulting
+interval object would represent a minor third.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.interval.from" id="apidoc.element.teoria.interval.from">
+        function <span class="apidocSignatureSpan">teoria.interval.</span>from
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">from = function (from, to) {
+  return from.interval(to);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Interval(coord)
+ - A representation of a music interval
+
+### Interval.toCoord(simpleInterval)
+ - Returns a `Interval` representing the interval expressed in string form.
+
+### Interval.<span class="apidocCodeKeywordSpan">from</span>(from, to)
+ - Returns a note which is a given interval away from a root note.
+
+*from* - The `Note` which is the root of the measuring
+
+*to* - A `Interval`
+
+### Interval.between(from, to)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.interval.invert" id="apidoc.element.teoria.interval.invert">
+        function <span class="apidocSignatureSpan">teoria.interval.</span>invert
+        <span class="apidocSignatureSpan">(sInterval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">invert = function (sInterval) {
+  return Interval.toCoord(sInterval).invert().toString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var c3 = teoria.note.fromKey(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).<span class="apidocCodeKeywordSpan">invert</span>(); // Returns a Interval representing
+ a major seventh
+
+// Create scales, based on notes.
+a4.scale('mixolydian').simple();  // Returns: ["a", "b", "c#", "d", "e"
+;, "f#", "g"]
+a4.scale('aeolian').simple();     // Returns: ["a", "b", "c", "d", "e"
+;, "f", "g"]
+g5.scale('ionian').simple();      // Returns: ["g", "a", "b", "c", "d"
+;, "e", "f#"]
+g5.scale('dorian');               // Returns a Scale object
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.interval.toCoord" id="apidoc.element.teoria.interval.toCoord">
+        function <span class="apidocSignatureSpan">teoria.interval.</span>toCoord
+        <span class="apidocSignatureSpan">(simple)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toCoord = function (simple) {
+  var coord = toCoord(simple);
+  if (!coord)
+    throw new Error('Invalid simple format interval');
+
+  return new Interval(coord);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### teoria.interval.invert -&gt; Interval.invert
+##### teoria.interval.toCoord -&gt; Interval.toCoord
+
+
+## Interval(coord)
+ - A representation of a music interval
+
+### Interval.<span class="apidocCodeKeywordSpan">toCoord</span>(simpleInterval)
+ - Returns a `Interval` representing the interval expressed in string form.
+
+### Interval.from(from, to)
+ - Returns a note which is a given interval away from a root note.
+
+*from* - The `Note` which is the root of the measuring
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.note" id="apidoc.module.teoria.note">module teoria.note</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.note.note" id="apidoc.element.teoria.note.note">
+        function <span class="apidocSignatureSpan">teoria.</span>note
+        <span class="apidocSignatureSpan">(name, duration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noteConstructor(name, duration) {
+  if (typeof name === 'string')
+    return Note.fromString(name, duration);
+  else
+    return new Note(name, duration);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+This is just a short introduction to what teoria-code looks like,
+for a technical library reference, look further down this document.
+
+```javascript
+
+// Create notes:
+var a4 = teoria.<span class="apidocCodeKeywordSpan">note</span>('a4');       // Scientific notation
+var g5 = teoria.note("g''");      // Helmholtz notation
+var c3 = teoria.note.fromKey(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.note.fromFrequency" id="apidoc.element.teoria.note.fromFrequency">
+        function <span class="apidocSignatureSpan">teoria.note.</span>fromFrequency
+        <span class="apidocSignatureSpan">(fq, concertPitch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromFrequency = function (fq, concertPitch) {
+  var key, cents, originalFq;
+  concertPitch = concertPitch || 440;
+
+  key = 49 + 12 * ((Math.log(fq) - Math.log(concertPitch)) / Math.log(2));
+  key = Math.round(key);
+  originalFq = concertPitch * Math.pow(2, (key - 49) / 12);
+  cents = 1200 * (Math.log(fq / originalFq) / Math.log(2));
+
+  return { note: Note.fromKey(key), cents: cents };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Create chords with the powerful chord parser
+a4.chord('sus2').name;    // Returns the name of the chord: 'Asus2'
+c3.chord('m').name;       // Returns 'Cm'
+teoria.chord('Ab#5b9');   // Returns a Chord object, representing a Ab#5b9 chord
+g5.chord('dim');          // Returns a Chord object, representing a Gdim chord
+
+// Calculate note frequencies or find the note corresponding to a frequency
+teoria.note.<span class="apidocCodeKeywordSpan">fromFrequency</span>(467); // Returns: {'note':{...},'cents':
+3.102831} -&gt; A4# a little out of tune.
+a4.fq(); // Outputs 440
+g5.fq(); // Outputs 783.9908719634985
+
+// teoria allows for crazy chaining:
+teoria.note('a')    // Create a note, A3
+.scale('lydian')  // Create a lydian scale with that note as root (A lydian)
+.interval('M2')   // Transpose the whole scale a major second up (B lydian)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.note.fromKey" id="apidoc.element.teoria.note.fromKey">
+        function <span class="apidocSignatureSpan">teoria.note.</span>fromKey
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromKey = function (key) {
+  var octave = Math.floor((key - 4) / 12);
+  var distance = key - (octave * 12) - 4;
+  var name = knowledge.fifths[(2 * Math.round(distance / 2) + 1) % 7];
+  var subDiff = vector.sub(knowledge.notes[name], knowledge.A4);
+  var note = vector.add(subDiff, [octave + 1, 0]);
+  var diff = (key - 49) - vector.sum(vector.mul(note, [12, 7]));
+
+  var arg = diff ? vector.add(note, vector.mul(knowledge.sharp, diff)) : note;
+  return new Note(arg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+for a technical library reference, look further down this document.
+
+```javascript
+
+// Create notes:
+var a4 = teoria.note('a4');       // Scientific notation
+var g5 = teoria.note("g''");      // Helmholtz notation
+var c3 = teoria.note.<span class="apidocCodeKeywordSpan">fromKey</span>(28); // From a piano key number
+
+// Find and create notes based on intervals
+teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
+teoria.interval(a4, 'M6');  // Returns a Note representing F#5
+a4.interval('m3');          // Returns a Note representing C#4
+a4.interval(g5);            // Returns a Interval object representing a minor seventh
+a4.interval(teoria.note('bb5')).invert(); // Returns a Interval representing a major seventh
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.note.fromMIDI" id="apidoc.element.teoria.note.fromMIDI">
+        function <span class="apidocSignatureSpan">teoria.note.</span>fromMIDI
+        <span class="apidocSignatureSpan">(note)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromMIDI = function (note) {
+  return Note.fromKey(note - 20);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### teoria.note.fromFrequency(fq)
+A static method returns an object containing two elements:
+
+*note* - A `Note` which corresponds to the closest note with the given frequency
+
+*cents* - A number value of how many cents the note is out of tune
+
+### teoria.note.<span class="apidocCodeKeywordSpan">fromMIDI</span>(note)
+- Returns an instance of Note set to the corresponding MIDI note value.
+
+*note* - A number ranging from 0-127 representing a MIDI note value
+
+### teoria.note.fromString(note)
+- Returns an instance of Note representing the note name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.note.fromString" id="apidoc.element.teoria.note.fromString">
+        function <span class="apidocSignatureSpan">teoria.note.</span>fromString
+        <span class="apidocSignatureSpan">(name, dur)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromString = function (name, dur) {
+  var coord = scientific(name);
+  if (!coord) coord = helmholtz(name);
+  return new Note(coord, dur);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*cents* - A number value of how many cents the note is out of tune
+
+### teoria.note.fromMIDI(note)
+ - Returns an instance of Note set to the corresponding MIDI note value.
+
+*note* - A number ranging from 0-127 representing a MIDI note value
+
+### teoria.note.<span class="apidocCodeKeywordSpan">fromString</span>(note)
+ - Returns an instance of Note representing the note name
+
+*note* - The name argument is the note name as a string. The note can both
+be expressed in scientific and Helmholtz notation.
+Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#''`, `Ab2`
+
+#### Note.name()
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.teoria.vector" id="apidoc.module.teoria.vector">module teoria.vector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.vector.add" id="apidoc.element.teoria.vector.add">
+        function <span class="apidocSignatureSpan">teoria.vector.</span>add
+        <span class="apidocSignatureSpan">(note, interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (note, interval) {
+  return [note[0] + interval[0], note[1] + interval[1]];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.vector.mul" id="apidoc.element.teoria.vector.mul">
+        function <span class="apidocSignatureSpan">teoria.vector.</span>mul
+        <span class="apidocSignatureSpan">(note, interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mul = function (note, interval) {
+  if (typeof interval === 'number')
+    return [note[0] * interval, note[1] * interval];
+  else
+    return [note[0] * interval[0], note[1] * interval[1]];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.vector.sub" id="apidoc.element.teoria.vector.sub">
+        function <span class="apidocSignatureSpan">teoria.vector.</span>sub
+        <span class="apidocSignatureSpan">(note, interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sub = function (note, interval) {
+  return [note[0] - interval[0], note[1] - interval[1]];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.teoria.vector.sum" id="apidoc.element.teoria.vector.sum">
+        function <span class="apidocSignatureSpan">teoria.vector.</span>sum
+        <span class="apidocSignatureSpan">(coord)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sum = function (coord) {
+  return coord[0] + coord[1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>

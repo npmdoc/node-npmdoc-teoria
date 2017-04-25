@@ -1,6 +1,6 @@
 # npmdoc-teoria
 
-#### api documentation for  [teoria (v2.2.2)](http://saebekassebil.github.com/teoria)  [![npm package](https://img.shields.io/npm/v/npmdoc-teoria.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-teoria) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-teoria.svg)](https://travis-ci.org/npmdoc/node-npmdoc-teoria)
+#### basic api documentation for  [teoria (v2.2.2)](http://saebekassebil.github.com/teoria)  [![npm package](https://img.shields.io/npm/v/npmdoc-teoria.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-teoria) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-teoria.svg)](https://travis-ci.org/npmdoc/node-npmdoc-teoria)
 
 #### Music theory for JavaScript
 
@@ -73,7 +73,8 @@
         "lint": "jshint index.js lib/",
         "test": "vows --dot-matric test/*"
     },
-    "version": "2.2.2"
+    "version": "2.2.2",
+    "bin": {}
 }
 ```
 

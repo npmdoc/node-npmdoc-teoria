@@ -1214,21 +1214,21 @@ a4.scale(&#x27;mixolydian&#x27;).simple();  // Returns: [&#x22;a&#x22;, &#x22;b&
     return new Note(name, duration);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+} else if (name instanceof Note)
+  return new Chord(name, symbol);
 
-This is just a short introduction to what teoria-code looks like,
-for a technical library reference, look further down this document.
+throw new Error(&#x27;Invalid Chord. Couldn\&#x27;t find note name&#x27;);
+}
 
-```javascript
+function scaleConstructor(tonic, scale) {
+tonic = (tonic instanceof Note) ? tonic : teoria.<span class="apidocCodeKeywordSpan">note</span>(tonic);
+return new Scale(tonic, scale);
+}
 
-// Create notes:
-var a4 = teoria.<span class="apidocCodeKeywordSpan">note</span>(&#x27;a4&#x27;);       // Scientific notation
-var g5 = teoria.note(&#x22;g&#x27;&#x27;&#x22;);      // Helmholtz notation
-var c3 = teoria.note.fromKey(28); // From a piano key number
+teoria = {
+note: noteConstructor,
 
-// Find and create notes based on intervals
-teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
-teoria.interval(a4, &#x27;M6&#x27;);  // Returns a Note representing F#5
-a4.interval(&#x27;m3&#x27;);          // Returns a Note representing C#4
+chord: chordConstructor,
 ...</pre></li>
     </ul>
 
@@ -1396,7 +1396,23 @@ c3.chord(&#x27;m&#x27;).name;       // Returns &#x27;Cm&#x27;
 
   return name || &#x27;unknown&#x27;;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return new Chord(this.root.interval(&#x27;P4&#x27;), additional);
+  },
+
+  parallel: function(additional) {
+additional = additional || &#x27;&#x27;;
+var quality = this.quality();
+
+if (this.<span class="apidocCodeKeywordSpan">chordType</span>() !== &#x27;triad&#x27; || quality === &#x27;diminished&#x27; ||
+    quality === &#x27;augmented&#x27;) {
+  throw new Error(&#x27;Only major/minor triads have parallel chords&#x27;);
+}
+
+if (quality === &#x27;major&#x27;) {
+  return new Chord(this.root.interval(&#x27;m3&#x27;, &#x27;down&#x27;), &#x27;m&#x27;);
+} else {
+...</pre></li>
     </ul>
 
 
@@ -1707,20 +1723,22 @@ c3.chord(&#x27;m&#x27;).name;       // Returns &#x27;Cm&#x27;
   return this.name;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+noteConstructor.fromMIDI = Note.fromMIDI;
 
-// teoria allows for crazy chaining:
-teoria.note(&#x27;a&#x27;)    // Create a note, A3
-  .scale(&#x27;lydian&#x27;)  // Create a lydian scale with that note as root (A lydian)
-  .interval(&#x27;M2&#x27;)   // Transpose the whole scale a major second up (B lydian)
-  .get(&#x27;third&#x27;)     // Get the third note of the scale (D#4)
-  .chord(&#x27;maj9&#x27;)    // Create a maj9 chord with that note as root (D#maj9)
-  .<span class="apidocCodeKeywordSpan">toString</span>();      // Make a string representation: &#x27;D#maj9&#x27;
-```
+function chordConstructor(name, symbol) {
+if (typeof name === &#x27;string&#x27;) {
+  var root, octave;
+  root = name.match(/^([a-h])(x|#|bb|b?)/i);
+  if (root &#x26;&#x26; root[0]) {
+    octave = typeof symbol === &#x27;number&#x27; ? symbol.<span class="apidocCodeKeywordSpan">toString</span>(10) : &#x27;4&#x27
+;;
+    return new Chord(Note.fromString(root[0].toLowerCase() + octave),
+                          name.substr(root[0].length));
+  }
+} else if (name instanceof Note)
+  return new Chord(name, symbol);
 
-Documentation
-------------------------
-
-## teoria.note (name | coord[, duration])
+throw new Error(&#x27;Invalid Chord. Couldn\&#x27;t find note name&#x27;);
 ...</pre></li>
     </ul>
 
@@ -1740,7 +1758,23 @@ Documentation
 
   return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+interval: function(interval) {
+  return new Chord(this.root.interval(interval), this.symbol);
+},
+
+transpose: function(interval) {
+  this.root.<span class="apidocCodeKeywordSpan">transpose</span>(interval);
+  this.name = this.root.name().toUpperCase() +
+              this.root.accidental() + this.symbol;
+
+  return this;
+},
+
+toString: function() {
+...</pre></li>
     </ul>
 
 
@@ -1820,21 +1854,21 @@ bbmaj.notes();    // #-&#x3e; [&#x27;bb&#x27;, &#x27;f&#x27;, &#x27;a&#x27;, &#x
   return new Interval(vector.sub(to.coord, from.coord));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-### Interval.from(from, to)
- - Returns a note which is a given interval away from a root note.
+  if (typeof to === &#x27;string&#x27; &#x26;&#x26; from instanceof Note)
+    return Interval.from(from, Interval.toCoord(to));
 
-*from* - The `Note` which is the root of the measuring
+  if (to instanceof Interval &#x26;&#x26; from instanceof Note)
+    return Interval.from(from, to);
 
-*to* - A `Interval`
+  if (to instanceof Note &#x26;&#x26; from instanceof Note)
+    return Interval.<span class="apidocCodeKeywordSpan">between</span>(from, to);
 
-### Interval.<span class="apidocCodeKeywordSpan">between</span>(from, to)
- - Returns an interval object which represents the interval between two notes.
+  throw new Error(&#x27;Invalid parameters&#x27;);
+}
 
-*from* and *to* are two `Note`s which are the notes that the
-interval is measured from. For example if &#x27;a&#x27; and &#x27;c&#x27; are given, the resulting
-interval object would represent a minor third.
-
-```javascript
+intervalConstructor.toCoord = Interval.toCoord;
+intervalConstructor.from = Interval.from;
+intervalConstructor.between = Interval.between;
 ...</pre></li>
     </ul>
 
@@ -1851,21 +1885,20 @@ interval object would represent a minor third.
   return from.interval(to);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+// never thought I would write this, but: Legacy support
+function intervalConstructor(from, to) {
+// Construct a Interval object from string representation
+if (typeof from === &#x27;string&#x27;)
+  return Interval.toCoord(from);
 
-## Interval(coord)
- - A representation of a music interval
+if (typeof to === &#x27;string&#x27; &#x26;&#x26; from instanceof Note)
+  return Interval.<span class="apidocCodeKeywordSpan">from</span>(from, Interval.toCoord(to));
 
-### Interval.toCoord(simpleInterval)
- - Returns a `Interval` representing the interval expressed in string form.
+if (to instanceof Interval &#x26;&#x26; from instanceof Note)
+  return Interval.from(from, to);
 
-### Interval.<span class="apidocCodeKeywordSpan">from</span>(from, to)
- - Returns a note which is a given interval away from a root note.
-
-*from* - The `Note` which is the root of the measuring
-
-*to* - A `Interval`
-
-### Interval.between(from, to)
+if (to instanceof Note &#x26;&#x26; from instanceof Note)
+  return Interval.between(from, to);
 ...</pre></li>
     </ul>
 
@@ -1920,20 +1953,20 @@ g5.scale(&#x27;dorian&#x27;);               // Returns a Scale object
   return new Interval(coord);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-##### teoria.interval.invert -&#x3e; Interval.invert
-##### teoria.interval.toCoord -&#x3e; Interval.toCoord
 
+var teoria;
 
-## Interval(coord)
- - A representation of a music interval
+// never thought I would write this, but: Legacy support
+function intervalConstructor(from, to) {
+// Construct a Interval object from string representation
+if (typeof from === &#x27;string&#x27;)
+  return Interval.<span class="apidocCodeKeywordSpan">toCoord</span>(from);
 
-### Interval.<span class="apidocCodeKeywordSpan">toCoord</span>(simpleInterval)
- - Returns a `Interval` representing the interval expressed in string form.
+if (typeof to === &#x27;string&#x27; &#x26;&#x26; from instanceof Note)
+  return Interval.from(from, Interval.toCoord(to));
 
-### Interval.from(from, to)
- - Returns a note which is a given interval away from a root note.
-
-*from* - The `Note` which is the root of the measuring
+if (to instanceof Interval &#x26;&#x26; from instanceof Note)
+  return Interval.from(from, to);
 ...</pre></li>
     </ul>
 
@@ -1954,7 +1987,23 @@ g5.scale(&#x27;dorian&#x27;);               // Returns a Scale object
     <li>description and source-code<pre class="apidocCodePre">add = function (interval) {
   return new Interval(vector.add(this.coord, interval.coord));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return this.value() &#x3e;= 1 ? &#x27;up&#x27; : &#x27;down&#x27;;
+},
+
+simple: function(ignore) {
+  // Get the (upwards) base interval (with quality)
+  var simple = knowledge.intervals[this.base()];
+  var toAdd = vector.mul(knowledge.sharp, this.qualityValue());
+  simple = vector.<span class="apidocCodeKeywordSpan">add</span>(simple, toAdd);
+
+  // Turn it around if necessary
+  if (!ignore)
+    simple = this.direction() === &#x27;down&#x27; ? vector.mul(simple, -1) : simple;
+
+  return new Interval(simple);
+},
+...</pre></li>
     </ul>
 
 
@@ -2051,7 +2100,23 @@ which is either `&#x27;up&#x27;` or `&#x27;down&#x27;`
     return this.coord[0] === interval.coord[0] &#x26;&#x26;
         this.coord[1] === interval.coord[1];
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  bassInterval = Interval.between(root, note);
+  bass = bassInterval.simple();
+  bassInterval = bassInterval.invert().direction(&#x27;down&#x27;);
+
+  this._voicing = [bassInterval];
+  for (var i = 0, length = intervals.length;  i &#x3c; length; i++) {
+    if (!intervals[i].simple().<span class="apidocCodeKeywordSpan">equal</span>(bass))
+      this._voicing.push(intervals[i]);
+  }
+}
+}
+
+Chord.prototype = {
+notes: function() {
+...</pre></li>
     </ul>
 
 
@@ -2072,7 +2137,23 @@ which is either `&#x27;up&#x27;` or `&#x27;down&#x27;`
   return (semi === isemi) ?
     (this.number() &#x3e; interval.number()) : (semi &#x3e; isemi);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // If equal in absolute size, measure which interval is bigger
+  // For example P4 is bigger than A3
+  return (semi === isemi) ?
+    (this.number() &#x3e; interval.number()) : (semi &#x3e; isemi);
+},
+
+smaller: function(interval) {
+  return !this.equal(interval) &#x26;&#x26; !this.<span class="apidocCodeKeywordSpan">greater</span>(interval);
+},
+
+add: function(interval) {
+  return new Interval(vector.add(this.coord, interval.coord));
+},
+
+toString: function(ignore) {
+...</pre></li>
     </ul>
 
 
@@ -2269,7 +2350,23 @@ The number may be prefixed with a `-` to signify that its direction is down. E.g
   else
     return Math.floor((this.coord[1] - 2) / 7) + 1;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  },
+
+  type: function() {
+return knowledge.intervals[this.base()][0] &#x3c;= 1 ? &#x27;perfect&#x27; : &#x27;minor&#x27;;
+  },
+
+  base: function() {
+var product = vector.mul(knowledge.sharp, this.<span class="apidocCodeKeywordSpan">qualityValue</span>());
+var fifth = vector.sub(this.coord, product)[1];
+fifth = this.value() &#x3e; 0 ? fifth + 5 : -(fifth - 5) % 7;
+fifth = fifth &#x3c; 0 ? knowledge.intervalFromFifth.length + fifth : fifth;
+
+var name = knowledge.intervalFromFifth[fifth];
+if (name === &#x27;unison&#x27; &#x26;&#x26; this.number() &#x3e;= 8)
+  name = &#x27;octave&#x27;;
+...</pre></li>
     </ul>
 
 
@@ -2284,7 +2381,23 @@ The number may be prefixed with a `-` to signify that its direction is down. E.g
     <li>description and source-code<pre class="apidocCodePre">semitones = function () {
   return vector.sum(vector.mul(this.coord, [12, 7]));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+equal: function(interval) {
+    return this.coord[0] === interval.coord[0] &#x26;&#x26;
+        this.coord[1] === interval.coord[1];
+},
+
+greater: function(interval) {
+  var semi = this.<span class="apidocCodeKeywordSpan">semitones</span>();
+  var isemi = interval.semitones();
+
+  // If equal in absolute size, measure which interval is bigger
+  // For example P4 is bigger than A3
+  return (semi === isemi) ?
+    (this.number() &#x3e; interval.number()) : (semi &#x3e; isemi);
+},
+...</pre></li>
     </ul>
 
 
@@ -2361,20 +2474,22 @@ c3.chord(&#x27;m&#x27;).name;       // Returns &#x27;Cm&#x27;
   return this.quality() + number;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+noteConstructor.fromMIDI = Note.fromMIDI;
 
-// teoria allows for crazy chaining:
-teoria.note(&#x27;a&#x27;)    // Create a note, A3
-  .scale(&#x27;lydian&#x27;)  // Create a lydian scale with that note as root (A lydian)
-  .interval(&#x27;M2&#x27;)   // Transpose the whole scale a major second up (B lydian)
-  .get(&#x27;third&#x27;)     // Get the third note of the scale (D#4)
-  .chord(&#x27;maj9&#x27;)    // Create a maj9 chord with that note as root (D#maj9)
-  .<span class="apidocCodeKeywordSpan">toString</span>();      // Make a string representation: &#x27;D#maj9&#x27;
-```
+function chordConstructor(name, symbol) {
+if (typeof name === &#x27;string&#x27;) {
+  var root, octave;
+  root = name.match(/^([a-h])(x|#|bb|b?)/i);
+  if (root &#x26;&#x26; root[0]) {
+    octave = typeof symbol === &#x27;number&#x27; ? symbol.<span class="apidocCodeKeywordSpan">toString</span>(10) : &#x27;4&#x27
+;;
+    return new Chord(Note.fromString(root[0].toLowerCase() + octave),
+                          name.substr(root[0].length));
+  }
+} else if (name instanceof Note)
+  return new Chord(name, symbol);
 
-Documentation
-------------------------
-
-## teoria.note (name | coord[, duration])
+throw new Error(&#x27;Invalid Chord. Couldn\&#x27;t find note name&#x27;);
 ...</pre></li>
     </ul>
 
@@ -2596,21 +2711,21 @@ A static method returns an object containing two elements:
   return new Note(coord, dur);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-*cents* - A number value of how many cents the note is out of tune
+intervalConstructor.toCoord = Interval.toCoord;
+intervalConstructor.from = Interval.from;
+intervalConstructor.between = Interval.between;
+intervalConstructor.invert = Interval.invert;
 
-### teoria.note.fromMIDI(note)
- - Returns an instance of Note set to the corresponding MIDI note value.
+function noteConstructor(name, duration) {
+  if (typeof name === &#x27;string&#x27;)
+    return Note.<span class="apidocCodeKeywordSpan">fromString</span>(name, duration);
+  else
+    return new Note(name, duration);
+}
 
-*note* - A number ranging from 0-127 representing a MIDI note value
-
-### teoria.note.<span class="apidocCodeKeywordSpan">fromString</span>(note)
- - Returns an instance of Note representing the note name
-
-*note* - The name argument is the note name as a string. The note can both
-be expressed in scientific and Helmholtz notation.
-Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#&#x27;&#x27;`, `Ab2`
-
-#### Note.name()
+noteConstructor.fromString = Note.fromString;
+noteConstructor.fromKey = Note.fromKey;
+noteConstructor.fromFrequency = Note.fromFrequency;
 ...</pre></li>
     </ul>
 
@@ -2965,7 +3080,23 @@ a4.scale(&#x27;mixolydian&#x27;).simple();  // Returns: [&#x22;a&#x22;, &#x22;b&
   else
     return this.coord[0] * 12 + this.coord[1] * 7 + 49;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return this.coord[0] * 12 + this.coord[1] * 7 + 49;
+},
+
+/**
+* Returns a number ranging from 0-127 representing a MIDI note value
+*/
+midi: function() {
+  return this.<span class="apidocCodeKeywordSpan">key</span>() + 20;
+},
+
+/**
+ * Calculates and returns the frequency of the note.
+ * Optional concert pitch (def. 440)
+ */
+fq: function(concertPitch) {
+...</pre></li>
     </ul>
 
 
@@ -3163,7 +3294,23 @@ accidental is returned. E.g. results such as &#x27;eb&#x27; and &#x27;c#&#x27; b
   solfege = knowledge.intervalSolfege[interval.simple(true).toString()];
   return (showOctaves) ? pad(solfege, stroke, Math.abs(count)) : solfege;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  i = isStepStr ? knowledge.stepNumber[i] : i;
+
+  return this.tonic.interval(this.scale[i - 1]);
+},
+
+solfege: function(index, showOctaves) {
+  if (index)
+    return this.get(index).<span class="apidocCodeKeywordSpan">solfege</span>(this, showOctaves);
+
+  return this.notes().map(function(n) {
+    return n.solfege(this, showOctaves);
+  });
+},
+
+interval: function(interval) {
+...</pre></li>
     </ul>
 
 
@@ -3179,20 +3326,22 @@ accidental is returned. E.g. results such as &#x27;eb&#x27; and &#x27;c#&#x27; b
   return this.name() + this.accidental() + (dont ? &#x27;&#x27; : this.octave());
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+noteConstructor.fromMIDI = Note.fromMIDI;
 
-// teoria allows for crazy chaining:
-teoria.note(&#x27;a&#x27;)    // Create a note, A3
-  .scale(&#x27;lydian&#x27;)  // Create a lydian scale with that note as root (A lydian)
-  .interval(&#x27;M2&#x27;)   // Transpose the whole scale a major second up (B lydian)
-  .get(&#x27;third&#x27;)     // Get the third note of the scale (D#4)
-  .chord(&#x27;maj9&#x27;)    // Create a maj9 chord with that note as root (D#maj9)
-  .<span class="apidocCodeKeywordSpan">toString</span>();      // Make a string representation: &#x27;D#maj9&#x27;
-```
+function chordConstructor(name, symbol) {
+if (typeof name === &#x27;string&#x27;) {
+  var root, octave;
+  root = name.match(/^([a-h])(x|#|bb|b?)/i);
+  if (root &#x26;&#x26; root[0]) {
+    octave = typeof symbol === &#x27;number&#x27; ? symbol.<span class="apidocCodeKeywordSpan">toString</span>(10) : &#x27;4&#x27
+;;
+    return new Chord(Note.fromString(root[0].toLowerCase() + octave),
+                          name.substr(root[0].length));
+  }
+} else if (name instanceof Note)
+  return new Chord(name, symbol);
 
-Documentation
-------------------------
-
-## teoria.note (name | coord[, duration])
+throw new Error(&#x27;Invalid Chord. Couldn\&#x27;t find note name&#x27;);
 ...</pre></li>
     </ul>
 
@@ -3209,7 +3358,23 @@ Documentation
   this.coord = vector.add(this.coord, interval.coord);
   return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+interval: function(interval) {
+  return new Chord(this.root.interval(interval), this.symbol);
+},
+
+transpose: function(interval) {
+  this.root.<span class="apidocCodeKeywordSpan">transpose</span>(interval);
+  this.name = this.root.name().toUpperCase() +
+              this.root.accidental() + this.symbol;
+
+  return this;
+},
+
+toString: function() {
+...</pre></li>
     </ul>
 
 
@@ -3419,7 +3584,23 @@ c3.chord(&#x27;m&#x27;).name;       // Returns &#x27;Cm&#x27;
     return n.solfege(this, showOctaves);
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  i = isStepStr ? knowledge.stepNumber[i] : i;
+
+  return this.tonic.interval(this.scale[i - 1]);
+},
+
+solfege: function(index, showOctaves) {
+  if (index)
+    return this.get(index).<span class="apidocCodeKeywordSpan">solfege</span>(this, showOctaves);
+
+  return this.notes().map(function(n) {
+    return n.solfege(this, showOctaves);
+  });
+},
+
+interval: function(interval) {
+...</pre></li>
     </ul>
 
 
@@ -3438,7 +3619,23 @@ c3.chord(&#x27;m&#x27;).name;       // Returns &#x27;Cm&#x27;
 
   return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+interval: function(interval) {
+  return new Chord(this.root.interval(interval), this.symbol);
+},
+
+transpose: function(interval) {
+  this.root.<span class="apidocCodeKeywordSpan">transpose</span>(interval);
+  this.name = this.root.name().toUpperCase() +
+              this.root.accidental() + this.symbol;
+
+  return this;
+},
+
+toString: function() {
+...</pre></li>
     </ul>
 
 
@@ -3540,21 +3737,21 @@ a4.scale(&#x27;mixolydian&#x27;).simple();  // Returns: [&#x22;a&#x22;, &#x22;b&
   return new Interval(vector.sub(to.coord, from.coord));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-### Interval.from(from, to)
- - Returns a note which is a given interval away from a root note.
+  if (typeof to === &#x27;string&#x27; &#x26;&#x26; from instanceof Note)
+    return Interval.from(from, Interval.toCoord(to));
 
-*from* - The `Note` which is the root of the measuring
+  if (to instanceof Interval &#x26;&#x26; from instanceof Note)
+    return Interval.from(from, to);
 
-*to* - A `Interval`
+  if (to instanceof Note &#x26;&#x26; from instanceof Note)
+    return Interval.<span class="apidocCodeKeywordSpan">between</span>(from, to);
 
-### Interval.<span class="apidocCodeKeywordSpan">between</span>(from, to)
- - Returns an interval object which represents the interval between two notes.
+  throw new Error(&#x27;Invalid parameters&#x27;);
+}
 
-*from* and *to* are two `Note`s which are the notes that the
-interval is measured from. For example if &#x27;a&#x27; and &#x27;c&#x27; are given, the resulting
-interval object would represent a minor third.
-
-```javascript
+intervalConstructor.toCoord = Interval.toCoord;
+intervalConstructor.from = Interval.from;
+intervalConstructor.between = Interval.between;
 ...</pre></li>
     </ul>
 
@@ -3571,21 +3768,20 @@ interval object would represent a minor third.
   return from.interval(to);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+// never thought I would write this, but: Legacy support
+function intervalConstructor(from, to) {
+// Construct a Interval object from string representation
+if (typeof from === &#x27;string&#x27;)
+  return Interval.toCoord(from);
 
-## Interval(coord)
- - A representation of a music interval
+if (typeof to === &#x27;string&#x27; &#x26;&#x26; from instanceof Note)
+  return Interval.<span class="apidocCodeKeywordSpan">from</span>(from, Interval.toCoord(to));
 
-### Interval.toCoord(simpleInterval)
- - Returns a `Interval` representing the interval expressed in string form.
+if (to instanceof Interval &#x26;&#x26; from instanceof Note)
+  return Interval.from(from, to);
 
-### Interval.<span class="apidocCodeKeywordSpan">from</span>(from, to)
- - Returns a note which is a given interval away from a root note.
-
-*from* - The `Note` which is the root of the measuring
-
-*to* - A `Interval`
-
-### Interval.between(from, to)
+if (to instanceof Note &#x26;&#x26; from instanceof Note)
+  return Interval.between(from, to);
 ...</pre></li>
     </ul>
 
@@ -3640,20 +3836,20 @@ g5.scale(&#x27;dorian&#x27;);               // Returns a Scale object
   return new Interval(coord);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-##### teoria.interval.invert -&#x3e; Interval.invert
-##### teoria.interval.toCoord -&#x3e; Interval.toCoord
 
+var teoria;
 
-## Interval(coord)
- - A representation of a music interval
+// never thought I would write this, but: Legacy support
+function intervalConstructor(from, to) {
+// Construct a Interval object from string representation
+if (typeof from === &#x27;string&#x27;)
+  return Interval.<span class="apidocCodeKeywordSpan">toCoord</span>(from);
 
-### Interval.<span class="apidocCodeKeywordSpan">toCoord</span>(simpleInterval)
- - Returns a `Interval` representing the interval expressed in string form.
+if (typeof to === &#x27;string&#x27; &#x26;&#x26; from instanceof Note)
+  return Interval.from(from, Interval.toCoord(to));
 
-### Interval.from(from, to)
- - Returns a note which is a given interval away from a root note.
-
-*from* - The `Note` which is the root of the measuring
+if (to instanceof Interval &#x26;&#x26; from instanceof Note)
+  return Interval.from(from, to);
 ...</pre></li>
     </ul>
 
@@ -3678,21 +3874,21 @@ g5.scale(&#x27;dorian&#x27;);               // Returns a Scale object
     return new Note(name, duration);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+} else if (name instanceof Note)
+  return new Chord(name, symbol);
 
-This is just a short introduction to what teoria-code looks like,
-for a technical library reference, look further down this document.
+throw new Error(&#x27;Invalid Chord. Couldn\&#x27;t find note name&#x27;);
+}
 
-```javascript
+function scaleConstructor(tonic, scale) {
+tonic = (tonic instanceof Note) ? tonic : teoria.<span class="apidocCodeKeywordSpan">note</span>(tonic);
+return new Scale(tonic, scale);
+}
 
-// Create notes:
-var a4 = teoria.<span class="apidocCodeKeywordSpan">note</span>(&#x27;a4&#x27;);       // Scientific notation
-var g5 = teoria.note(&#x22;g&#x27;&#x27;&#x22;);      // Helmholtz notation
-var c3 = teoria.note.fromKey(28); // From a piano key number
+teoria = {
+note: noteConstructor,
 
-// Find and create notes based on intervals
-teoria.interval(a4, g5);    // Returns a Interval object representing a minor seventh
-teoria.interval(a4, &#x27;M6&#x27;);  // Returns a Note representing F#5
-a4.interval(&#x27;m3&#x27;);          // Returns a Note representing C#4
+chord: chordConstructor,
 ...</pre></li>
     </ul>
 
@@ -3820,21 +4016,21 @@ A static method returns an object containing two elements:
   return new Note(coord, dur);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-*cents* - A number value of how many cents the note is out of tune
+intervalConstructor.toCoord = Interval.toCoord;
+intervalConstructor.from = Interval.from;
+intervalConstructor.between = Interval.between;
+intervalConstructor.invert = Interval.invert;
 
-### teoria.note.fromMIDI(note)
- - Returns an instance of Note set to the corresponding MIDI note value.
+function noteConstructor(name, duration) {
+  if (typeof name === &#x27;string&#x27;)
+    return Note.<span class="apidocCodeKeywordSpan">fromString</span>(name, duration);
+  else
+    return new Note(name, duration);
+}
 
-*note* - A number ranging from 0-127 representing a MIDI note value
-
-### teoria.note.<span class="apidocCodeKeywordSpan">fromString</span>(note)
- - Returns an instance of Note representing the note name
-
-*note* - The name argument is the note name as a string. The note can both
-be expressed in scientific and Helmholtz notation.
-Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#&#x27;&#x27;`, `Ab2`
-
-#### Note.name()
+noteConstructor.fromString = Note.fromString;
+noteConstructor.fromKey = Note.fromKey;
+noteConstructor.fromFrequency = Note.fromFrequency;
 ...</pre></li>
     </ul>
 
@@ -3855,7 +4051,23 @@ Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#&#x27;&#x27;`, `Ab2`
     <li>description and source-code<pre class="apidocCodePre">add = function (note, interval) {
   return [note[0] + interval[0], note[1] + interval[1]];
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return this.value() &#x3e;= 1 ? &#x27;up&#x27; : &#x27;down&#x27;;
+},
+
+simple: function(ignore) {
+  // Get the (upwards) base interval (with quality)
+  var simple = knowledge.intervals[this.base()];
+  var toAdd = vector.mul(knowledge.sharp, this.qualityValue());
+  simple = vector.<span class="apidocCodeKeywordSpan">add</span>(simple, toAdd);
+
+  // Turn it around if necessary
+  if (!ignore)
+    simple = this.direction() === &#x27;down&#x27; ? vector.mul(simple, -1) : simple;
+
+  return new Interval(simple);
+},
+...</pre></li>
     </ul>
 
 
@@ -3873,7 +4085,23 @@ Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#&#x27;&#x27;`, `Ab2`
   else
     return [note[0] * interval[0], note[1] * interval[1]];
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Interval.prototype = {
+name: function() {
+  return knowledge.intervalsIndex[this.number() - 1];
+},
+
+semitones: function() {
+  return vector.sum(vector.<span class="apidocCodeKeywordSpan">mul</span>(this.coord, [12, 7]));
+},
+
+number: function() {
+  return Math.abs(this.value());
+},
+
+value: function() {
+...</pre></li>
     </ul>
 
 
@@ -3888,7 +4116,22 @@ Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#&#x27;&#x27;`, `Ab2`
     <li>description and source-code<pre class="apidocCodePre">sub = function (note, interval) {
   return [note[0] - interval[0], note[1] - interval[1]];
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+number: function() {
+  return Math.abs(this.value());
+},
+
+value: function() {
+  var toMultiply = Math.floor((this.coord[1] - 2) / 7) + 1;
+  var product = vector.mul(knowledge.sharp, toMultiply);
+  var without = vector.<span class="apidocCodeKeywordSpan">sub</span>(this.coord, product);
+  var i = knowledge.intervalFromFifth[without[1] + 5];
+  var diff = without[0] - knowledge.intervals[i][0];
+  var val = knowledge.stepNumber[i] + diff * 7;
+
+  return (val &#x3e; 0) ? val : val - 2;
+},
+...</pre></li>
     </ul>
 
 
@@ -3903,7 +4146,23 @@ Some examples of valid note names: `Eb4`, `C#,,`, `C4`, `d#&#x27;&#x27;`, `Ab2`
     <li>description and source-code<pre class="apidocCodePre">sum = function (coord) {
   return coord[0] + coord[1];
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Interval.prototype = {
+name: function() {
+  return knowledge.intervalsIndex[this.number() - 1];
+},
+
+semitones: function() {
+  return vector.<span class="apidocCodeKeywordSpan">sum</span>(vector.mul(this.coord, [12, 7]));
+},
+
+number: function() {
+  return Math.abs(this.value());
+},
+
+value: function() {
+...</pre></li>
     </ul>
 
 
